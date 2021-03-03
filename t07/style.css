@@ -6,6 +6,7 @@ table {
 
 th {
     padding: 10px;
+    background-color:  rgba(110, 0, 0, 0.4);
 }
 
 .columns_names {
