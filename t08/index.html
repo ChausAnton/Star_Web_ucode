@@ -1,113 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Unicorn</title>
-        <meta name="description" content="t06. Unicorn" charset="utf-8">
+        <title>t08</title>
+        <meta name="description" content="t08" charset="utf-8">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <h1>Table</h1>
-        <table>
-            <tr class="columns_names">
-                <th>NAME </th>
-                <th>IS HUMAN </th>
-                <th>SUPERPOWER</th>
-                <th>INTELLIGENCE</th>
-                <th>STRENGTH</th>
-                <th>SPEED</th>
-            </tr>
-            <tr>
-                <th class="odd">Batman</th>
-                <th rowspan="7" class="white"> TRUE</th>
-                <th class="white">Peak Human Condition</th>
-                <th class="red">100</th>
-                <th class="white">30</th>
-                <th class="white">25</th>
-            </tr>
-            <tr>
-                <th class="even">Captan <br> America</th>
-                <th class="white">Artifiially Enhanced<br>Physiology</th>
-                <th class="white">90</th>
-                <th class="white">35</th>
-                <th class="white">45</th>
-            </tr>
-            <tr>
-                <th class="odd">Daredevil</th>
-                <th class="white">Superhuman Senses</th>
-                <th class="white">90</th>
-                <th class="white">15</th>
-                <th class="white">35</th>
-            </tr>
-            <tr>
-                <th class="even">Green<br>Lanterb</th>
-                <th class="white">Bright Green Energy<br>Conduit</th>
-                <th class="white">80</th>
-                <th class="red">100</th>
-                <th class="red">100</th>
-            </tr>
-            <tr>
-                <th class="odd">Hulk</th>
-                <th class="white">Superhuman Strength</th>
-                <th class="white">60</th>
-                <th class="red">100</th>
-                <th class="white">85</th>
-            </tr>
-            <tr>
-                <th class="even">Iron Man</th>
-                <th class="white">Direct Cibernetic Interface</th>
-                <th class="red">100</th>
-                <th class="white">85</th>
-                <th class="white">70</th>
-            </tr>
-            <tr>
-                <th class="odd">Spider-man</th>
-                <th class="white">Animal Oriented Powers</th>
-                <th class="white">95</th>
-                <th class="white">55</th>
-                <th class="white">65</th>
-            </tr>
-            <tr>
-                <th class="even">Supernman</th>
-                <th class="red">FALSE</th>
-                <th class="white">Criptonian Physiology</th>
-                <th class="white">95</th>
-                <th class="red">100</th>
-                <th class="red">100</th>
-            </tr>
-            <tr>
-                <th class="odd">The Flash</th>
-                <th class="white">TRUE</th>
-                <th class="white">Speed Force Conduit</th>
-                <th class="white">95</th>
-                <th class="white">50</th>
-                <th class="red">100</th>
-            </tr>
-            <tr>
-                <th class="even">Thor</th>
-                <th rowspan="3" class="red">FALSE</th>
-                <th class="white">Asgardian/Elder God<br>Hybrid Physiology</th>
-                <th class="white">80</th>
-                <th class="red">100</th>
-                <th class="red">100</th>
-            </tr>
-            <tr>
-                <th class="odd">Wolverine</th>
-                <th class="white">Unbreakable<br>Skeleton</th>
-                <th class="white">80</th>
-                <th class="white">40</th>
-                <th class="white">40</th>
-            </tr>
-            <tr>
-                <th class="even">Whonder<br>Woman</th>
-                <th class="white">Divine Empowerment</th>
-                <th class="white">90</th>
-                <th class="red">100</th>
-                <th class="red">100</th>
-            </tr>
-            <tr>
-                <th colspan="6" class="last"><a href="#columns_names"> < superherodb.com ></a></th>
-            </tr>
-            
+        <h1>Superhero Form</h1>
+        <form>
+            <div class="firs_data">
+                <p class="About_the_superhero">About the Superhero</p>
+                <span>Real name</span> 
+                <input type="text" class="real_name" placeholder="Superhero real name"> 
+                <span>Superhero name</span>      
+                <input type="text" class="Superhero name" placeholder="Superhero alias">
+                <span>Age</span>
+                <input type="number" class="age" min="1" max="999">
+                <br><span>About</span>
+                <textarea rows="5" cols="70" class="about" maxlength="500" placeholder="Inforamtion about the superhero, max 500 symbols"></textarea><br><br>
+                <span>Photo </span> <input type="file">
+            </div>
+            <div class="second_box">
+                <p class="Powers">Powers</p>
+                <input type="checkbox"> <span>Telekinesis</span>
+                <input type="checkbox"> <span>Super strength or speed</span>
+                <input type="checkbox"> <span>Shapeshifting</span>
+                <input type="checkbox"> <span>Flight</span>
+                <input type="checkbox"> <span>Elemental control</span>
+                <input type="checkbox"> <span>Other</span>
+                <br><br><span>Level of control:</span>
+                <input type="range" id="Level_of_control" name="Level_of_control" min="0" max="10" value="0">
+            </div>
+            <div class="three"> 
+                <p class="Origin_of_powes">Origin of Powes</p>
+                <input type="radio"> <span>Unknown</span>
+                <input type="radio"> <span>Freak lab accident</span>
+                <input type="radio"> <span>Chosen by an ancient wise being</span>
+                <input type="radio"> <span>The superhero i not human</span>
+                <input type="radio"> <span>Other</span>
+            </div>
+            <input type="reset" value="CLEAR" class="reset">
+            <input type="submit" value="SEND" class="send">
+        </form>
     </body>
 </html>
