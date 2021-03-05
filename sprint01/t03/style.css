@@ -1,0 +1,81 @@
+.button_area {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    padding: 15px;
+    text-align: center;
+    background-color: red;
+    color: white;
+}
+
+.layer2 {
+    width: 100%;
+}
+
+.layer3 {
+    width: 100%;
+}
+
+.phone_content2, .desktops_content2 {
+    margin-top: 40px;
+}
+
+.phone, .desktops {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown1, .dropdown2 {
+
+    position: relative;
+    display: inline-block;
+}
+.phone_content, .desktops_content {
+    
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.phone_content {
+    right: 0%;
+}
+
+.phone_content .layer2, .desktops_content .layer2, .Android_content .Android_layer3, 
+.IOS_content .IOS_layer3, .Apple_content .Apple_layer3, .Other_content .Other_layer3 {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.Android_content, .IOS_content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-top: -40px;
+    right: 100%;
+}
+
+.Apple_content, .Other_content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-top: -40px;
+    left: 100%;
+}
+
+.dropdown1:hover .phone_content, .dropdown2:hover .desktops_content, .phone_content1:hover .Android_content, .phone_content2:hover .IOS_content,
+.desktops_content1:hover  .Apple_content, .desktops_content2:hover  .Other_content{display: block;}
+
