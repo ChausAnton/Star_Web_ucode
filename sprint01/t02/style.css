@@ -1,0 +1,12 @@
+.man {
+    width: 75px;
+    margin-left: 20px;
+}
+
+.The-Infinity-Gauntlet:hover ~ div div:nth-child(2n-1) img:nth-child(2n - 1) {
+    visibility: hidden;
+}
+
+.The-Infinity-Gauntlet:hover ~ div div:nth-child(2n) img:nth-child(2n) {
+    visibility: hidden;
+}
