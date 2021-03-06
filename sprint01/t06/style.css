@@ -1,0 +1,32 @@
+h1 {
+    color: hotpink;
+}
+h2 {
+    color: gray;
+    text-align: center;
+}
+.first_buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 50px 0px;
+}
+
+.text {
+    text-align: center;
+    text-transform:uppercase;
+}
+
+.labele {
+    padding: 20px 10px;
+    text-align: center;
+    border: 1.5px solid gray;
+    border-radius: 25px;
+    background: white;
+    color: gray;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+input[type=checkbox].checkbox {
+    display: none;
+}
