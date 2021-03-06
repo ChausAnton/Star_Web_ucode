@@ -13,7 +13,7 @@ h2 {
 }
 
 .labele {
-    padding: 20px 10px;
+    padding: 20px 40px;
     text-align: center;
     border: 1.5px solid gray;
     border-radius: 25px;
@@ -32,10 +32,10 @@ h2 {
     color: white;
 }
 
-#defeat:checked ~ .button_1_1_style::after, #civilian:checked ~ .button_1_2_style::after, #robbery:checked ~ .button_1_3_style::after,
-#apocalypse:checked ~ .button_2_1_style::after,  #sidekick:checked ~ .button_2_2_style::after, #stuff:checked ~ .button_3_1_style::after{
-    margin-left: 5px;
-    content: '\2713';
+#defeat:checked ~ .button_1_1_style:after, #civilian:checked ~ .button_1_2_style:after, #robbery:checked ~ .button_1_3_style:after,
+#apocalypse:checked ~ .button_2_1_style:after,  #sidekick:checked ~ .button_2_2_style:after, #stuff:checked ~ .button_3_1_style:after{
+    margin-left: 10px;
+    content: ' \2713';
     background-color: darkblue;
     color: white;
 }
