@@ -5,16 +5,11 @@ h2 {
     color: gray;
     text-align: center;
 }
-.first_buttons {
+.buttons {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     margin: 50px 0px;
-}
-
-.text {
-    text-align: center;
-    text-transform:uppercase;
 }
 
 .labele {
@@ -27,6 +22,20 @@ h2 {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-input[type=checkbox].checkbox {
+.checkbox {
     display: none;
+}
+
+#defeat:checked ~ .button_1_1_style, #civilian:checked ~ .button_1_2_style, #robbery:checked ~ .button_1_3_style,
+#apocalypse:checked ~ .button_2_1_style,  #sidekick:checked ~ .button_2_2_style, #stuff:checked ~ .button_3_1_style{
+    background-color: darkblue;
+    color: white;
+}
+
+#defeat:checked ~ .button_1_1_style::after, #civilian:checked ~ .button_1_2_style::after, #robbery:checked ~ .button_1_3_style::after,
+#apocalypse:checked ~ .button_2_1_style::after,  #sidekick:checked ~ .button_2_2_style::after, #stuff:checked ~ .button_3_1_style::after{
+    margin-left: 5px;
+    content: '\2713';
+    background-color: darkblue;
+    color: white;
 }
