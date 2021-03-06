@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+} 
+form {
+    display: flex;
+    flex-flow: row;
+}
+button {
+    box-sizing: border-box;
+    color: green;
+    padding: 0px 10px;
+    height: 2em;
+}
+input {
+    box-sizing: border-box;
+    color: green;
+    width: 100%;
+    padding: 0px 10px;
+    height: 2em;
+}
+input:hover, button:hover {
+    color: red;
+}
+
