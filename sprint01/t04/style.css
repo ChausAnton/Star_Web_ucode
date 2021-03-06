@@ -1,0 +1,78 @@
+h1, h2 {
+    padding: 15px;
+    text-align: center;
+}
+
+.content_box {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.html_content, .css_content {
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+.div_example {
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    background-color: chartreuse;
+    width: 100%;
+    height: 10px;
+    border: 2px solid black;
+}
+
+.h1_example {
+    margin-top: -10px;
+}
+
+.padding_example {
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.background_example {
+    background: black;
+    color: white;
+}
+.float_example {
+    float: left;
+}
+
+.height_example {
+    height: 10px;
+}
+
+.font_family_example {
+    font-family: cursive;
+}
+
+.font_size_example {
+    font-size: x-large;
+}
+
+.font_style_example {
+    font-style: italic;
+}
+
+.font_weight_example {
+    font-weight: 900;
+}
+
+.margin_example {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    margin-left: 30px;
+}
+
+.opacity_example {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    opacity: 50%;
+}
