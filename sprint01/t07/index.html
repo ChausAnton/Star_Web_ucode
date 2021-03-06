@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Coffeeshop</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Coffeeshop</h1>
+            <input type="text" placeholder="Search" class="search_box">
+            <span class="header_data">Menu</span>
+            <span class="header_data">About</span>
+            <span class="header_data">Our contact</span>
+            <span class="header_data">Our Numder 8 (800) 555 3535</span>
+        </div>
+        
+        <div class="breadcrumbs">
+            <span class="text_breadcrumbs">breadcrumbs</span>
+        </div>
+
+        <div class="filters">
+            <input type="radio" class="radio" id="civilian" name="price">
+            <span class="text_filters">5$ - 10$</span><br>
+            <input type="radio" class="radio" id="civilian"  name="price">
+            <span class="text_filters">10$ - 50$</span><br>
+            <input type="radio" class="radio" id="civilian"  name="price">
+            <span class="text_filters">50$ - 100$</span><br>
+            <input type="radio" class="radio" id="civilian"  name="price">
+            <span class="text_filters">100$ - 150$</span><br>
+            <sapn class="text_filters">Price:</sapn><br>
+            <input type="range" id="Level_of_control" name="Level_of_control" min="10" max="150" value="10" oninput="this.nextElementSibling.value = this.value">
+            <output class="text_filters">10</output>
+        </div>
+
+        <div class="products">
+            <div class="product_content">
+                <h3>Minecraft grass</h3>
+                <img class="grass_image" src="assets/images/grass1.png">
+
+                <div class="prod_main_info">
+                    <span class="prod_cost">price: 150$</span>
+                    <span class="availability">Now available</span>
+                </div>
+                <div class="buy_button_area">
+                    <button class="buy_button">Buy</button>
+                </div>
+            </div>
+            
+            <div class="product_content">
+                <h3>Minecraft grass</h3>
+                <img class="grass_image" src="assets/images/grass1.png">
+
+                <div class="prod_main_info">
+                    <span class="prod_cost">price: 150$</span>
+                    <span class="availability">Now available</span>
+                </div>
+                <div class="buy_button_area">
+                    <button class="buy_button">Buy</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </body>
+</html>
