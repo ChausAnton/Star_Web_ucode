@@ -39,3 +39,47 @@ h2 {
     background-color: darkblue;
     color: white;
 }
+
+.Job_details {
+    padding: 0px 30px;
+    display: flex;
+    flex-flow: row;
+}
+
+.details {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    width: 100%;
+}
+
+.name, .email {
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    width: calc(100% - 50%);
+}
+
+.name {
+    margin-right: 50px;
+}
+
+.button_send {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 0px 30px;
+    width: 100%;
+    background-color: lightcoral;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+}
