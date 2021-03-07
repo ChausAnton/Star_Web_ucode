@@ -14,12 +14,28 @@ h3 {
     text-align: center;
 }
 
+.next_page_link {
+    color: grey;
+}
+
+.pagintion_box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 40px;
+}
 
 .prod_cost, .text_filters, h3 {
     color: grey;
 }
 .not_available {
     color: red;
+}
+
+.copyright, .mail {
+    color: grey;
+    padding-top: 50px;
+    margin-left: 40px;
 }
 
 .available {
@@ -36,7 +52,7 @@ h3 {
     margin-left: 40px;
 }
 
-.buy_button_area {
+.buy_button_area, footer {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
