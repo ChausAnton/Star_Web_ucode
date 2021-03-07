@@ -14,8 +14,22 @@ h3 {
     text-align: center;
 }
 
+
+.prod_cost, .text_filters, h3 {
+    color: grey;
+}
+.not_available {
+    color: red;
+}
+
+.available {
+    color: green;
+}
+
 .grass_image {
     padding: 10px;
+    width: 300px;
+    height: 300px;
 }
 
 .prod_cost, .availability {
@@ -95,11 +109,6 @@ h3 {
     text-align: left;
     margin: 15px;
     margin-left: 30px;
-}
-
-.text_filters {
-    color: white;
-    
 }
 
 .filters {
