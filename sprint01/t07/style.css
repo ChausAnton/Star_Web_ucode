@@ -206,3 +206,38 @@ a {
     border: 2px solid black;
     float: left;
 }
+
+
+@media screen and (max-width: 768px) {
+    .product_content {
+        width: 250px
+    }
+
+     .grass_image {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .product_content {
+        width: 250px
+    }
+
+     .grass_image {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .product_content {
+        width: 300px
+    }
+    .grass_image {
+        margin-right: -5px;
+        min-width: 300px;
+        width: 300px;
+        height: 300px;
+    }
+}
