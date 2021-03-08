@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>t00</title>
+        <meta name="description" content="t01"charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <button onclick="inside()">inside</button>
+        <script>
+            function inside() {
+                alert("Hello JavaScript from inside!")
+            }
+        </script>
+
+        <button onclick="outside()">outside</button>
+        <script type="text/javascript" src="js/script.js">outside()</script>
+    </body>
+</html>
