@@ -40,6 +40,9 @@ function func(start, end) {
         if(is_even || is_multiple_of3 || is_multiple_of10) {
             console.log(answer)
         }
+        else (
+            console.log(i + " -")
+        )
         is_even = false;
         is_multiple_of3 = false;
         is_multiple_of10 = false;
@@ -53,10 +56,9 @@ let range = prompt("input range. Example: 1-20");
 let start = 1;
 let end = 100;
 let temp = range.split("-")
-
-if(range && temp[0] && temp[1]) {
-    start = temp[0];
-    end = temp[1];
+if(range && temp[0] && temp[1] && (Number(temp[0]) < Number(temp[1]))) {
+    start = Number(temp[0]);
+    end = Number(temp[1]);
 }
 
 func(start, end);
