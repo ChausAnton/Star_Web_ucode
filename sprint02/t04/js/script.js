@@ -56,9 +56,13 @@ let range = prompt("input range. Example: 1-20");
 let start = 1;
 let end = 100;
 let temp = range.split("-")
-if(range && temp[0] && temp[1] && (Number(temp[0]) < Number(temp[1]))) {
-    start = Number(temp[0]);
-    end = Number(temp[1]);
+if(range && temp[0] && temp[1]) {
+    let tmp1 = 1 * temp[0]
+    let tmp2 = 1 * temp[1]
+    if(tmp1 < tmp2) {
+        start = tmp1;
+        end = tmp2;
+    }
 }
 
 func(start, end);
