@@ -1,0 +1,56 @@
+body  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.not {
+    display: none;
+}
+
+.bottom_button {
+    width: 50px;
+    border-radius: 5px;
+    background-color: cornsilk;
+}
+
+.image_human_not {
+    display: none;
+}
+
+.image_human {
+    width: 200px;
+}
+
+.middle {
+    width: 200px;
+    border: 2px solid black;
+}
+
+.top {
+    width: 200px
+}
+
+.middle {
+    height: 450px;
+}
+
+.human_superhero, .superhero_human {
+    width: 100%;
+    border-radius: 5px;
+    background-color: cornsilk;
+}
+
+.bottom_button_box {
+    display: flex;
+    flex-flow: row;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 400px;
+}
