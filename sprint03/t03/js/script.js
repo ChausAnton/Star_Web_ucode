@@ -8,6 +8,12 @@ class human {
         this._feed = false;
         this._sleep = false;
         setInterval(() => this.hungry(), 60000);
+        setTimeout(() => {
+            document.querySelector('.data_human .some_info').innerHTML = "losing calories start"
+            setTimeout(() => {
+                document.querySelector('.data_human .some_info').innerHTML = ""
+            }, 2000)
+        }, 5000)
     }
 
     hungry() {
