@@ -1,15 +1,18 @@
 var Top = new Array('Name', 'Strength', 'Age');
 var content = [
-    ["Black Panther", "66", "53"],
-    ["Capitain America", "79", "137"],
-    ["Capitan Marvel", "97", "26"],
-    ["Hulk", "80", "49"],
-    ["Iron Man", "88", "48"],
-    ["Spider-Man", "78" , "16"],
-    ["Thanos", "99", "1000"],
-    ["Thor", "95", "1000"],
-    ["Yon-Rogg", "73", "52"]
+    ["Capitain America", 79, 137],
+    ["Capitan Marvel", 97, 26],
+    ["Hulk", 80, 49],
+    ["Iron Man", 88, 48],
+    ["Spider-Man", 78, 16],
+    ["Thanos", 99, 1000],
+    ["Thor", 95, 1000],
+    ["Black Panther", 66, 53],
+    ["Yon-Rogg", 73, 52]
 ];
+
+var sort = false;
+var column = -1;
 
 function setTable() {
     let remove = document.getElementById("table");
@@ -34,7 +37,7 @@ function setTable() {
                 let text = document.createTextNode(Top[j]);
                 cell.appendChild(text);
                 cell.setAttribute("class", "top_cell cell top_cell" + i)
-                cell.addEventListener("click", event => { tableSort(); })
+                cell.addEventListener("click", event => { tableSort(j, Top[j]); })
             }
             else {
                 let text = document.createTextNode(content[i - 1][j]);
@@ -49,21 +52,25 @@ function setTable() {
     body.appendChild(table);
 }
 
-function tableSort() {
-    content = [
-        ["Black Panther", "1000", "53"],
-        ["Capitain America", "79", "137"],
-        ["Capitan Marvel", "97", "26"],
-        ["Hulk", "80", "49"],
-        ["Iron Man", "88", "48"],
-        ["Spider-Man", "78" , "16"],
-        ["Thanos", "99", "1000"],
-        ["Thor", "95", "1000"],
-        ["Yon-Rogg", "73", "52"]
-    ];
+function tableSort(j, str) {
+    if(sort == false || column != j) {
+        content.sort((a, b) => {
+            return a[j] == b[j] ? 0 : (a[j] < b[j] ? -1 : 1);
+        });
+        document.getElementById("notification").innerHTML = "Sorting by " + str + ", order ASC"
+        column = j;
+        sort = true;
+    }
+    else{
+        content.sort((a, b) => {
+            return a[j] == b[j] ? 0 : (a[j] > b[j] ? -1 : 1);
+        });
+        document.getElementById("notification").innerHTML = "Sorting by " + str + ", order DESC"
+        sort = false;
+    }
+
     setTable();
 }
-
 
 setTable();
 

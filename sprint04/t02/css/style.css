@@ -23,7 +23,9 @@ table {
 }
 
 #notification {
-
+    background-color: gray;
+    padding: 15px;
+    border-radius: 50px;
     float: right;
 }
 #placeholder {
