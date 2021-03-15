@@ -18,7 +18,6 @@ for(let elem of elements) {
             let line = document.createElement("div");
             line.setAttribute("class", "line");
             newDiv.appendChild(line);
-            elem.appendChild(newDiv);
         }
         else {
             elem.appendChild(document.createElement("br"));
@@ -27,12 +26,8 @@ for(let elem of elements) {
                 newDiv.setAttribute("data-element", elem.getAttribute("data-element"))
                 newDiv.setAttribute("class", i + " " + "elem");
                 elem.appendChild(newDiv);
-                console.log(newDiv);
             }
         }
     }
 }
 
-for(let i of elements) {
-    console.log(i);
-}
