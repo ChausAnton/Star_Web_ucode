@@ -1,0 +1,35 @@
+.stone {
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+
+.stone1 {
+    background-color: #70D372;
+    border: 2px solid black;
+}
+
+.stone2 {
+    background-color: #D4C464;
+    border: 2px solid black;
+}
+
+.stone3 {
+    background-color: #9B54D0;
+    border: 2px solid black;
+}
+
+.stone4 {
+    background-color: #C74757;
+    border: 2px solid black;
+}
+
+.stone5 {
+    background-color: #3884D1;
+    border: 2px solid black;
+}
+
+.stone6 {
+    background-color: #C95F7C;
+    border: 2px solid black;
+}
