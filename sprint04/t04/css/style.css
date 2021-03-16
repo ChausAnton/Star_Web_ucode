@@ -1,0 +1,97 @@
+.mian_box {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.right_box {
+    display: flex;
+    flex-flow: row;
+    width: 600px;
+    height: 350px;
+    background-color: #E6E6E6;
+}
+
+.info {
+    display: flex;
+    flex-flow: wrap;
+    float: right;
+}
+
+.title_date {
+    margin-top: 20px;
+    width: 250px;
+    height: 50px;
+}
+
+.actors {
+    padding-left: 5px;
+    display: flex;
+    flex-flow: wrap;
+    width: 350px;
+    height: 75px;
+}
+
+.actor {
+    width: 75px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #3985D1;
+    text-align: center;
+    padding: 2px;
+}
+
+.actor_p {
+    margin-top: 5px;
+    color: white;
+}
+
+.description {
+    width: 400px;
+    height: 125px;
+}
+
+.film_image {
+    float: right;
+}
+
+.image {
+    width: 175px;
+    height: 250px;
+}
+
+.left_box {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 150px;
+    height: 350px;
+    border-right: 2px solid white;
+    background-color: #E6E6E6;
+}
+
+.film_title {
+    margin-top: 15px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+title {
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.title_film {
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: -15px;
+}
+
+.description_text {
+    margin-top: 0px;
+}
