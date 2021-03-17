@@ -9,7 +9,7 @@ function getWeather(lat, lon, exclude) {
 }
 
 
-getWeather("33.441792", "-94.037689", "minutely"); // Chicago
+getWeather("33.441792", "-94.037689", "minutely");
 
 function drawWeather(wether) {
 	
