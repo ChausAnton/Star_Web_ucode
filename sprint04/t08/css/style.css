@@ -39,7 +39,11 @@ button {
     background-color: #f0f0f0;
 }
 
-.out_date {
+textarea {
+    resize: vertical;
+}
+
+.out_data {
     width: 480px;
     background-color: white;
     height: 30px;

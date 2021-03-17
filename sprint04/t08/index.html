@@ -12,26 +12,26 @@
 
 <body>
     <h1>RegExp and Cookies</h1>
-    <form class="main_box">
+    <div class="main_box"><!-- form -->
         <div class="buttons_box">
-            <button class="to_phone">To phone number</button>
-            <button class="word">Word count</button>
-            <button class="replace">Word replace</button>
+            <button onclick="phoneNumber()" class="to_phone">To phone number</button>
+            <button class="word" onclick="WordCount()">Word count</button>
+            <button class="replace" onclick="wordReplace()">Word replace</button>
         </div>
         <div class="input_fields">
             <div class="input_box">
                 <p>Work input</p>
-                <input type="text" size="20" class="input_field input">
+                <input type="text" class="input_field input" id="input_">
             </div>
             <div class="textarea_box">
                 <p>Text input</p>
-                <textarea name="Text1" cols="40" rows="5" class="input_field textarea"></textarea>
+                <textarea name="Text1" rows="5" class="input_field textarea" id="textarea_"></textarea>
             </div>
         </div>
         <div class="output_fields">
             <div class="output_field">
                 <p>Output:</p>
-                <div class="out_date"> 
+                <div class="out_data"> 
                     <span class="data">
 
 
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 </body>
 
 </html>
