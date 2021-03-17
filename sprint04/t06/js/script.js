@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var images = document.querySelectorAll("img");    
     var loadTimeout;
     var counter = 0;
+    lazyload();
     function lazyload () {
     if(loadTimeout) {
         clearTimeout(loadTimeout);
     }    
-    
     loadTimeout = setTimeout(function() {
             var scroll = window.pageYOffset;
             images.forEach(function(img) {
