@@ -28,6 +28,9 @@ function addToStorage() {
     if(minutes.length < 2) {
         minutes = "0" + String(minutes)
     }
+    if(sec.length < 2) {
+        sec = "0" + String(sec)
+    }
 
     datestr = date_ + "." + month + "." + year + ", " + hours + ":" + minutes + ":" + sec
 
