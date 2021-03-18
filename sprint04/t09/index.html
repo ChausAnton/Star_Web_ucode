@@ -4,28 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>RegExp and Cookies</title>
-    <meta name="description" content="t08. RegExp and Cookies">
+    <title>LocalStorage</title>
+    <meta name="description" content="t09. LocalStorage">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
 
-<body onload="displayCookie()" onclick="displayCookie()">
-    <h1>RegExp and Cookies</h1>
+<body onload="displayStorage()">
+    <h1>LocalStorage</h1>
     <div class="main_box"><!-- form -->
         <div class="buttons_box">
-            <button onclick="phoneNumber()" class="to_phone">To phone number</button>
-            <button class="word" onclick="WordCount()">Word count</button>
-            <button class="replace" onclick="wordReplace()">Word replace</button>
+            <button onclick="addToStorage()" class="addToStorage">add to storage</button>
+            <button class="clearStorage" onclick="clearStorage()">clear storage</button>
         </div>
         <div class="input_fields">
             <div class="input_box">
-                <p>Work input</p>
+                <p>Text input:</p>
                 <input type="text" class="input_field input" id="input_">
-            </div>
-            <div class="textarea_box">
-                <p>Text input</p>
-                <textarea name="Text1" rows="5" class="input_field textarea" id="textarea_"></textarea>
             </div>
         </div>
         <div class="output_fields">

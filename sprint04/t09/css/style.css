@@ -14,7 +14,18 @@ button {
 
 }
 
-.textarea_box, .input_box{
+.buttons_box {
+    display: flex;
+    flex-flow: row;
+    width: 530px;
+}
+.clearStorage {
+    margin-left: 280px;
+    background-color: #F0F0F0;
+    color: black;
+}
+
+.input_box{
     width: 480px;
 }
 
@@ -37,10 +48,6 @@ button {
     width: 500px;
     border-radius: 5px;
     background-color: #f0f0f0;
-}
-
-textarea {
-    resize: vertical;
 }
 
 .out_data {

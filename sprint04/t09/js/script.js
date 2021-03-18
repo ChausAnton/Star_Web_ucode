@@ -1,111 +1,52 @@
-let date = new Date();
-date.setTime(date.getTime() + (60000))
-
-function phoneNumber() {
-    let phoneNum = document.getElementById("input_");
-    let text = phoneNum.value.trim();
-    if(text.match(/^\d{10}$/g)) {
-        document.querySelector(".main_box .output_fields .output_field .data").innerHTML = `${text.slice(0,3)}-${text.slice(3,6)}-${text.slice(6,10)}`;
-    }
-    else {
-        document.querySelector(".main_box .output_fields .output_field .data").innerHTML = "Invalid phone number"
-    }
-
-    let phoneNumberCnt = getCookie("phoneNumberCnt");
-    document.cookie = "phoneNumberCnt=" + (++phoneNumberCnt) + ";expires=" + date.toGMTString();
-}
-
-function WordCount() {
-    let wordNode = document.getElementById("input_");
-    let word = wordNode.value.trim();
-
-    let textNode = document.getElementById("textarea_");
-    let text = textNode.value.trim();
-
-    let WordCountCnt = getCookie("WordCountCnt");
-    document.cookie = "WordCountCnt=" + (++WordCountCnt) + ";expires=" + date.toGMTString();
-
-    if(checkInput(word, text) == 1) {
-        return
-    }
-    else {
-        let count = text.split(word).length - 1;
-        document.querySelector(".main_box .output_fields .output_field .data").innerHTML = "Word count: " + count;
-    }
-
-}
-
-function wordReplace() {
-    let wordNode = document.getElementById("input_");
-    let word = wordNode.value.trim();
-
-    let textNode = document.getElementById("textarea_");
-    let text = textNode.value.trim().replace("\n", " ");
-
-    let newStr = "";
-
-    let wordReplaceCnt = getCookie("wordReplaceCnt");
-    document.cookie = "wordReplaceCnt=" + (++wordReplaceCnt);+ ";expires=" + date.toGMTString()
-
-    if(checkInput(word, text) == 1) {
-        return
-    }
-    else {
-        let arr = clearArr(text.split(" "));
-        for(let i = 0; i < arr.length; i++) {
-            newStr += word + " ";
-        }
-        document.querySelector(".main_box .output_fields .output_field .data").innerHTML = newStr;
-    }
+function addToStorage() {
+    let inputNode = document.getElementById("input_");
+    let value = inputNode.value.trim();
     
-}
-
-function displayCookie() {
-    let wordReplaceCnt = getCookie("wordReplaceCnt") || 0;
-    document.querySelector(".main_box .buttons_box .replace").innerHTML = "Word replace [" + wordReplaceCnt + "]";
-
-    let WordCountCnt = getCookie("WordCountCnt") || 0;
-    document.querySelector(".main_box .buttons_box .word").innerHTML = "Word count [" + WordCountCnt + "]";
-
-    let phoneNumberCnt = getCookie("phoneNumberCnt") || 0;
-    document.querySelector(".main_box .buttons_box .to_phone").innerHTML = "To phone number [" + phoneNumberCnt + "]";
-
-}
-
-function clearArr(strArr) {
-    console.log(strArr);
-    strArr = strArr.filter((val) => {
-        if(val != "" && val != "\n") {
-            return true;
-        }
-    });
-    return strArr;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+    let i = 0;
+    while(localStorage.getItem("input_" + i)) {
+        i++;
     }
-    return "";
+
+    let date = new Date();
+    date.getTime();
+    let year = date.getFullYear();
+    let month = "" + (date.getMonth() + 1);
+    let date_ = "" + date.getDate();
+    let hours = "" + date.getHours();
+    let minutes = "" + date.getMinutes();
+    let sec = "" + date.getSeconds();
+    
+    if(month.length < 2) {
+        month = "0" + String(month)
+    }
+    if(date_.length < 2) {
+        date_ = "0" + String(date_)
+    }
+    if(hours.length < 2) {
+        hours = "0" + String(hours)
+    }
+    if(minutes.length < 2) {
+        minutes = "0" + String(minutes)
+    }
+
+    datestr = date_ + "." + month + "." + year + ", " + hours + ":" + minutes + ":" + sec
+
+    localStorage.setItem("input_" + i, "--> " + value + " [" + datestr + "]" + "<br>");
+    document.querySelector(".main_box .output_fields .output_field .out_data .data").innerHTML += localStorage.getItem("input_" + i);
 }
 
-function checkInput(word, text) {
-    if(word == "") {
-        document.querySelector(".main_box .output_fields .output_field .data").innerHTML = "Invalid word";
-        return 1;
+function clearStorage() {
+    localStorage.clear();
+    displayStorage();
+}
+
+function displayStorage() {
+    let i = 0;
+    if(!localStorage.getItem("input_" + i)) {
+        document.querySelector(".main_box .output_fields .output_field .out_data .data").innerHTML = "";
     }
-    else if(text == "") {
-        document.querySelector(".main_box .output_fields .output_field .data").innerHTML = "Invalid text";
-        return 1;
+    while(localStorage.getItem("input_" + i)) {
+        document.querySelector(".main_box .output_fields .output_field .out_data .data").innerHTML += localStorage.getItem("input_" + i);
+        i++;
     }
-    return -1;
 }
