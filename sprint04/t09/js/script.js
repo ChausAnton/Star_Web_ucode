@@ -45,7 +45,7 @@ function wordReplace() {
     let newStr = "";
 
     let wordReplaceCnt = getCookie("wordReplaceCnt");
-    document.cookie = "wordReplaceCnt=" + (++wordReplaceCnt) + ";expires=" + date.toGMTString();
+    document.cookie = "wordReplaceCnt=" + (++wordReplaceCnt);+ ";expires=" + date.toGMTString()
 
     if(checkInput(word, text) == 1) {
         return
