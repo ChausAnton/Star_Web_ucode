@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadTimeout = setTimeout(function() {
             var scroll = window.pageYOffset;
             images.forEach(function(img) {
-                if(img.offsetTop < (window.innerHeight + scroll) && (img.offsetTop + 612) > scroll) {
+                if(img.offsetTop < (window.innerHeight + scroll)) {
                     img.src = img.dataset.src;
                     if(img.classList.contains("lazy")) {
                         counter++;

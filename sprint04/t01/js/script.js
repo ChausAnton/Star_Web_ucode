@@ -1,3 +1,4 @@
+
 let elements = document.querySelectorAll("#characters > li");
 
 for(let elem of elements) {
@@ -30,4 +31,3 @@ for(let elem of elements) {
         }
     }
 }
-
