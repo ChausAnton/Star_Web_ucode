@@ -1,0 +1,25 @@
+.main_box {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.top_box {
+  width: 350px;
+  height: 200px;
+  border-radius: 5px 5px 0px 0px;
+  border: 2px solid blue;
+  border-bottom: none;
+}
+
+.bottom_box {
+  width: 350px;
+  height: 400px;
+  border-radius: 0px 0px 5px 5px;
+  border: 2px solid blue;
+  border-top: none;
+
+  display: grid;
+  grid-template-columns: 85px 85px 85px 85px;
+  grid-gap:  3px;
+}
