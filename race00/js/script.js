@@ -7,11 +7,11 @@ var hex = "-1";
 var dec = "1";
 var bin = "-1";
 
-document.querySelector(".main .texta .output").innerHTML = "0";
+document.querySelector(".main .texta .output .input2").value = "0";
 
 function toHex() {
     expresion = "";
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output .input2").value = expresion;
     document.querySelector(".main .texta .history").innerHTML = expresion;
 
     document.querySelector(".main .grid-container .hex").setAttribute("class", "hex active");
@@ -38,12 +38,12 @@ function toHex() {
     }
 
     document.getElementById('i' + 17).disabled = false;
-    document.querySelector(".main .texta .output").innerHTML = "0";
+    document.querySelector(".main .texta .output .input2").value = "0";
 }
 
 function toDec() {
     expresion = "";
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output .input2").value = expresion;
     document.querySelector(".main .texta .history").innerHTML = expresion;
 
     document.querySelector(".main .grid-container .hex").setAttribute("class", "hex");
@@ -63,13 +63,13 @@ function toDec() {
         document.getElementById('i' + i).disabled = false;
     }
     document.getElementById('i' + 17).disabled = false;
-    document.querySelector(".main .texta .output").innerHTML = "0";
+    document.querySelector(".main .texta .output .input2").value = "0";
 
 }
 
 function toBin() {
     expresion = "";
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output .input2").value = expresion;
     document.querySelector(".main .texta .history").innerHTML = expresion;
 
     document.querySelector(".main .grid-container .hex").setAttribute("class", "hex");
@@ -97,7 +97,7 @@ function toBin() {
         document.getElementById('i' + i).disabled = true
     }
     document.getElementById('i' + 17).disabled = false;
-    document.querySelector(".main .texta .output").innerHTML = "0";
+    document.querySelector(".main .texta .output .input2").value = "0";
 }
 
 function signsF() {
@@ -127,6 +127,7 @@ function splitF() {
 }
 
 function addSymbol(g) {
+    expresion = document.querySelector(".main .texta .output .input2").value;
 
     let nums = splitF();
 
@@ -149,17 +150,17 @@ function addSymbol(g) {
 
     expresion += g;
 
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output .input2").value = expresion;
 }
 
 function pi() {
     expresion = "3.1415";
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output .input2").value = expresion;
 }
 
 function clearF() {
     expresion = "";
-    document.querySelector(".main .texta .output").innerHTML = "0";
+    document.querySelector(".main .texta .output .input2").value = "0";
 }
 
 function percent() {
@@ -168,7 +169,7 @@ function percent() {
 
     if(nums.length < 2) {
         expresion = "";
-        document.querySelector(".main .texta .output").innerHTML = "Error";
+        document.querySelector(".main .texta .output .input2").value = "Error";
         return 0;
     }
 
@@ -189,45 +190,27 @@ function percent() {
         }
     }
     expresion += res;
-    document.querySelector(".main .texta .output").innerHTML = expresion;
-}
-
-function parsString() {
-    let str = prompt("input str");
-
-    let signs = "";
-    let nums = [[""]];
-    let j = 0;
-    for(let i of str) {
-        if(isNaN(i) && i != '.') {
-            signs += i;
-            nums.push("");
-            j++;
-        }
-        else {
-            nums[j] += i;
-        }
-    }
+    document.querySelector(".main .texta .output .input2").value = expresion;
 }
 
 function MR() {
     Memory = evalF()
-    document.querySelector(".main .texta .output").innerHTML = Memory;
+    document.querySelector(".main .texta .output .input2").value = Memory;
 }
 
 function MC() {
     Memory = 0;
-    document.querySelector(".main .texta .output").innerHTML = Memory;
+    document.querySelector(".main .texta .output .input2").value = Memory;
 }
 
 function M_Minus(str) {
     Memory = Memory + evalF()
-    document.querySelector(".main .texta .output").innerHTML = Memory;
+    document.querySelector(".main .texta .output .input2").value = Memory;
 }
 
 function M_Plus(str) {
     Memory = Memory - evalF()
-    document.querySelector(".main .texta .output").innerHTML = Memory;
+    document.querySelector(".main .texta .output .input2").value = Memory;
 }
 
 function evalF() {
@@ -259,7 +242,7 @@ function evalF() {
         res = res.toString(2);
     }
 
-    document.querySelector(".main .texta .output").innerHTML = res;
+    document.querySelector(".main .texta .output .input2").value = res;
     document.querySelector(".main .texta .history").innerHTML = expresion;
     expresion = res;
     return res;
@@ -282,7 +265,7 @@ function sqrtF(str) {
 
     expresion = expresion.slice(0, length - nums[j].length);
     expresion += res;
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output .input2").value = expresion;
 }
 
 function oneX() {
@@ -292,7 +275,7 @@ function oneX() {
 
     expresion = expresion.slice(0, length - nums[j].length);
     expresion += res;
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output .input2").value = expresion;
 }
 
 function rebuildExp(nums, signs, res) {
