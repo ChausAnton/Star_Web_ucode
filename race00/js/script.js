@@ -127,8 +127,7 @@ function splitF() {
 }
 
 function addSymbol(g) {
-    expresion = document.querySelector(".main .texta .output .input2").value;
-
+    expresion =  document.querySelector(".main .texta .output .input2").value;
     let nums = splitF();
 
     if(g == '.') {
@@ -214,6 +213,7 @@ function M_Plus(str) {
 }
 
 function evalF() {
+    expresion = document.querySelector(".main .texta .output .input2").value;
     let nums = splitF();
     let signs = signsF();
 
