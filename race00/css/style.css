@@ -204,7 +204,16 @@
 }
 
 input:disabled{
-    background-color: beige;
-    color: beige;
+    background-color: rgba(113, 113, 113, 0.892);
 }
 
+.output textarea{
+    width: 100%;
+    text-align: right;
+    resize: none;
+    border:none;
+    font-size: 20px;
+    outline:none;
+    min-height: 30px;
+    height: 90px;
+}

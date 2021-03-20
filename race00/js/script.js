@@ -7,6 +7,8 @@ var hex = "-1";
 var dec = "1";
 var bin = "-1";
 
+document.querySelector(".main .texta .output").innerHTML = "0";
+
 function toHex() {
     expresion = "";
     document.querySelector(".main .texta .output").innerHTML = expresion;
@@ -36,6 +38,7 @@ function toHex() {
     }
 
     document.getElementById('i' + 17).disabled = false;
+    document.querySelector(".main .texta .output").innerHTML = "0";
 }
 
 function toDec() {
@@ -60,6 +63,7 @@ function toDec() {
         document.getElementById('i' + i).disabled = false;
     }
     document.getElementById('i' + 17).disabled = false;
+    document.querySelector(".main .texta .output").innerHTML = "0";
 
 }
 
@@ -93,6 +97,7 @@ function toBin() {
         document.getElementById('i' + i).disabled = true
     }
     document.getElementById('i' + 17).disabled = false;
+    document.querySelector(".main .texta .output").innerHTML = "0";
 }
 
 function signsF() {
@@ -154,7 +159,7 @@ function pi() {
 
 function clearF() {
     expresion = "";
-    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .output").innerHTML = "0";
 }
 
 function percent() {
