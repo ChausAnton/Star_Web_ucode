@@ -1,21 +1,23 @@
-String.prototype.replaceAt = function (index, char) {
-    if(char=='') {
-        return this.slice(0,index)+this.substr(index+1 + char.length);
-    } else {
-        return this.substr(0, index) + char + this.substr(index + char.length);
-    }
-}
-
 var Memory = 0;
 var expresion = "";
+var j = 0;
 
-function addSymbol(g) {
+function signsF() {
 
-    let nums = [[""]];
-    let j = 0;
-
+    let signs = "";
     for(let i of expresion) {
         if(isNaN(i) && i != '.') {
+            signs += i;
+        }
+    }
+    return signs;
+}
+
+function splitF() {
+    j = 0;
+    let nums = [[""]];
+    for(let i of expresion) {
+        if(isNaN(i) && i != '.' && i != '^') {
             nums.push("");
             j++;
         }
@@ -23,6 +25,12 @@ function addSymbol(g) {
             nums[j] += i;
         }
     }
+    return nums;
+}
+
+function addSymbol(g) {
+
+    let nums = splitF();
 
     if(g == '.') {
         if(expresion.length == 0 || nums[j] == ''){
@@ -34,7 +42,6 @@ function addSymbol(g) {
         }
     }
 
-
    if(isNaN(g) && g != '.') {
        let index = nums[j].indexOf('.');
        if(index + 1 == nums[j].length) {
@@ -42,12 +49,21 @@ function addSymbol(g) {
        }
    }
 
-
-
     expresion += g;
 
     document.querySelector(".main .texta .output").innerHTML = expresion;
 }
+
+function pi() {
+    expresion = "3.1415";
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+}
+
+function clearF() {
+    expresion = "";
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+}
+
 
 function parsString() {
     let str = prompt("input str");
@@ -67,43 +83,82 @@ function parsString() {
     }
 }
 
-function MR(str) {
-    Memory = str;
+function MR() {
+    Memory = evalF()
+    document.querySelector(".main .texta .output").innerHTML = Memory;
 }
 
 function MC() {
     Memory = 0;
+    document.querySelector(".main .texta .output").innerHTML = Memory;
 }
 
 function M_Minus(str) {
-    Memory -= str;
+    Memory = Memory + evalF()
+    document.querySelector(".main .texta .output").innerHTML = Memory;
 }
 
 function M_Plus(str) {
-    Memory += str;
+    Memory = Memory - evalF()
+    document.querySelector(".main .texta .output").innerHTML = Memory;
 }
 
 function evalF() {
+    pow();
     let res = eval(expresion);
     document.querySelector(".main .texta .output").innerHTML = res;
     document.querySelector(".main .texta .history").innerHTML = expresion;
+    expresion = "0";
+    return res;
 }
 
-function pow(nums) {
-    nums = nums.split("^");
-    let res = Math.pow(nums[0], nums[1]);
-    console.log(res);
-
+function pow() {
+    let nums = splitF();
+    for(let i of nums) {
+        if(i.includes('^')) {
+            let res = Math.pow(i.split("^")[0], i.split("^")[1]);
+            expresion = expresion.replace(i, res);
+        }
+    }
 }
 
 function sqrtF(str) {
-    let res = Math.sqrt(str);
-    console.log(res);
+    let nums = splitF();
+    let res = Math.sqrt(nums[j]);
+    let length = expresion.length;
+
+    expresion = expresion.slice(0, length - nums[j].length);
+    expresion += res;
+    document.querySelector(".main .texta .output").innerHTML = expresion;
 }
 
-function calc_fact(num) {
-    let res = factorial(num)
-    console.log(res);
+function oneX() {
+    let nums = splitF();
+    let res = 1/nums[j];
+    let length = expresion.length;
+
+    expresion = expresion.slice(0, length - nums[j].length);
+    expresion += res;
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+}
+
+function rebuildExp(nums, signs, res) {
+    expresion = "";
+    for(let i = 0; i < nums.length - 1; i++) {
+        expresion += nums[i];
+        expresion += signs[i];
+    }
+    expresion += res;
+}
+
+function calc_fact() {
+    let nums = splitF();
+    let signs = signsF();
+    console.log(nums);
+
+    let res = factorial(nums[j])
+    rebuildExp(nums, signs, res);
+    evalF()
 }
 
 function factorial(n) {

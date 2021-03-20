@@ -37,20 +37,20 @@
             <div class="otn dop"><input type="button" value="-" onclick="addSymbol('-')"></div>
             <div class="add dop"><input type="button" value="+" onclick="addSymbol('+')"></div>
             <div class="per dop"><input type="button" value="%"></div>
-            <div class="pom dop"><input type="button" value="+/-"></div>
-            <div class="c eq"><input type="button" value="C"></div>
+            <!--<div class="pom dop"><input type="button" value="+/-" onclick="transformNumber()"></div>-->
+            <div class="c eq"><input type="button" value="C" onclick="clearF()"></div>
 
-            <div class="p dop"><input type="button" value="π"></div>
-            <div class="f dop"><input type="button" value="!"></div>
-            <div class="xn dop"><input type="button" value="xⁿ"></div>
-            <div class="cor dop"><input type="button" value="√"></div>
-            <div class="onex dop"><input type="button" value="1/x"></div>
+            <div class="p dop"><input type="button" value="π" onclick="pi()"></div>
+            <div class="f dop"><input type="button" value="!" onclick="calc_fact()"></div>
+            <div class="xn dop"><input type="button" value="xⁿ" onclick="addSymbol('^')"></div>
+            <div class="cor dop"><input type="button" value="√" onclick="sqrtF()"></div>
+            <div class="onex dop"><input type="button" value="1/x" onclick="oneX()"></div>
 
             <div class="perev dop"><input type="button" value="⟳"></div>
-            <div class="mr dop"><input type="button" value="MR"></div>
-            <div class="mc dop"><input type="button" value="MC"></div>
-            <div class="madd dop"><input type="button" value="M+"></div>
-            <div class="mdep dop"><input type="button" value="M-"></div>
+            <div class="mr dop"><input type="button" value="MR" onclick="MR()"></div>
+            <div class="mc dop"><input type="button" value="MC" onclick="MC()"></div>
+            <div class="madd dop"><input type="button" value="M+" onclick="M_Minus()"></div>
+            <div class="mdep dop"><input type="button" value="M-" onclick="M_Plus()"></div>
         </div>
     </div>
     <div class="allconv">
