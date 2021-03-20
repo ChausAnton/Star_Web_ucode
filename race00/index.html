@@ -12,13 +12,17 @@
 <body>
     <div class="main">
         <div class="texta">
-            <div class="history">12+353+66</div>
-            <div class="output">112343</div>
+            <div class="history">
+                <input type="text" class="input1">
+            </div>
+            <div class="output">
+                <textarea type="text" class="input2" placeholder="0"></textarea>
+            </div>
         </div>
         <div class="grid-container">
-            <div class="hex"><input type="button" value="HEX"></div>
-            <div class="dec active"><input type="button" value="DEC"></div>
-            <div class="bin"><input type="button" value="BIN"></div>
+            <div class="hex"><input type="button" value="HEX" onclick="toHex()"></div>
+            <div class="dec active"><input type="button" value="DEC" onclick="toDec()"></div>
+            <div class="bin"><input type="button" value="BIN" onclick="toBin()"></div>
 
             <div class="i1"><input type="button" value="1" id="i1" onclick="addSymbol(1)"></div>
             <div class="i2"><input type="button" value="2" id="i2" onclick="addSymbol(2)"></div>
@@ -30,27 +34,27 @@
             <div class="i8"><input type="button" value="8" id="i8" onclick="addSymbol(8)"></div>
             <div class="i9"><input type="button" value="9" id="i9" onclick="addSymbol(9)"></div>
             <div class="i0"><input type="button" value="0" id="i0" onclick="addSymbol(0)"></div>
-            <div class="t1 dop"><input type="button" value="." id="dot"  onclick="addSymbol('.')"></div>
-            <div class="r eq"><input type="button" value="=" onclick="evalF()"></div>
-            <div class="del dop"><input type="button" value="/" onclick="addSymbol('/')"></div>
-            <div class="umn dop"><input type="button" value="*" onclick="addSymbol('*')"></div>
-            <div class="otn dop"><input type="button" value="-" onclick="addSymbol('-')"></div>
-            <div class="add dop"><input type="button" value="+" onclick="addSymbol('+')"></div>
-            <div class="per dop"><input type="button" value="%"></div>
+            <div class="r eq"><input type="button" value="=" id="i10" onclick="evalF()"></div>
+            <div class="del dop"><input type="button" value="/" id="i11" onclick="addSymbol('/')"></div>
+            <div class="umn dop"><input type="button" value="*" id="i12" onclick="addSymbol('*')"></div>
+            <div class="otn dop"><input type="button" value="-" id="i13" onclick="addSymbol('-')"></div>
+            <div class="add dop"><input type="button" value="+" id="i14" onclick="addSymbol('+')"></div>
+            <div class="t1 dop"><input type="button" value="." id="i15" onclick="addSymbol('.')"></div>
+            <div class="per dop"><input type="button" id="i16" value="%"></div>
             <!--<div class="pom dop"><input type="button" value="+/-" onclick="transformNumber()"></div>-->
-            <div class="c eq"><input type="button" value="C" onclick="clearF()"></div>
+            <div class="c eq"><input type="button" value="C" id="i17" onclick="clearF()"></div>
 
-            <div class="p dop"><input type="button" value="π" onclick="pi()"></div>
-            <div class="f dop"><input type="button" value="!" onclick="calc_fact()"></div>
-            <div class="xn dop"><input type="button" value="xⁿ" onclick="addSymbol('^')"></div>
-            <div class="cor dop"><input type="button" value="√" onclick="sqrtF()"></div>
-            <div class="onex dop"><input type="button" value="1/x" onclick="oneX()"></div>
+            <div class="p dop"><input type="button" value="π" id="i18" onclick="pi()"></div>
+            <div class="f dop"><input type="button" value="!" id="i19" onclick="calc_fact()"></div>
+            <div class="xn dop"><input type="button" value="xⁿ" id="i20" onclick="addSymbol('^')"></div>
+            <div class="cor dop"><input type="button" value="√" id="i21" onclick="sqrtF()"></div>
+            <div class="onex dop"><input type="button" value="1/x" id="i22" onclick="oneX()"></div>
 
             <div class="perev dop"><input type="button" value="⟳" onclick="convert('convert1')"></div>
-            <div class="mr dop"><input type="button" value="MR" onclick="MR()"></div>
-            <div class="mc dop"><input type="button" value="MC" onclick="MC()"></div>
-            <div class="madd dop"><input type="button" value="M+" onclick="M_Minus()"></div>
-            <div class="mdep dop"><input type="button" value="M-" onclick="M_Plus()"></div>
+            <div class="mr dop"><input type="button" value="MR" id="i23" onclick="MR()"></div>
+            <div class="mc dop"><input type="button" value="MC" id="i24" onclick="MC()"></div>
+            <div class="madd dop"><input type="button" value="M+" id="i25" onclick="M_Minus()"></div>
+            <div class="mdep dop"><input type="button" value="M-" id="i26" onclick="M_Plus()"></div>
         </div>
     </div>
     <div class="allconv">
@@ -62,12 +66,12 @@
         </div>
         <div class="convert noactive convert2">
             <div class="symbols">
-                <div class="dop"><input type="button" value="A"></div>
-                <div class="dop"><input type="button" value="B"></div>
-                <div class="dop"><input type="button" value="C"></div>
-                <div class="dop"><input type="button" value="D"></div>
-                <div class="dop"><input type="button" value="E"></div>
-                <div class="dop"><input type="button" value="F"></div>
+                <div class="dop"><input type="button" value="A" onclick="addSymbol('A')"></div>
+                <div class="dop"><input type="button" value="B" onclick="addSymbol('B')"></div>
+                <div class="dop"><input type="button" value="C" onclick="addSymbol('C')"></div>
+                <div class="dop"><input type="button" value="D" onclick="addSymbol('D')"></div>
+                <div class="dop"><input type="button" value="E" onclick="addSymbol('E')"></div>
+                <div class="dop"><input type="button" value="F" onclick="addSymbol('F')"></div>
             </div>
         </div>
         <div class="convert noactive convert3">

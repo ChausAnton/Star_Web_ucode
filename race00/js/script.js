@@ -3,12 +3,103 @@ var expresion = "";
 var j = 0;
 var Selected1 = '0';
 var Selected2 = '0';
+var hex = "-1";
+var dec = "1";
+var bin = "-1";
+
+function toHex() {
+    expresion = "";
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .history").innerHTML = expresion;
+
+    document.querySelector(".main .grid-container .hex").setAttribute("class", "hex active");
+    hex = "1";
+    
+    document.querySelector(".main .grid-container .dec").setAttribute("class", "dec");
+    dec = '-1';
+
+    document.querySelector(".main .grid-container .bin").setAttribute("class", "bin");
+    bin = "-1";
+
+    for(let i = 1; i < 5; i++) {
+        document.querySelector(".allconv .convert" + i).className = "convert noactive convert" + i;
+    }
+
+    document.querySelector(".allconv .convert2").className = "convert convert2";
+
+    for(let i = 0; i < 27; i++) {
+        document.getElementById('i' + i).disabled = false;
+    }
+
+    for(let i = 15; i < 27; i++) {
+        document.getElementById('i' + i).disabled = true
+    }
+
+    document.getElementById('i' + 17).disabled = false;
+}
+
+function toDec() {
+    expresion = "";
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .history").innerHTML = expresion;
+
+    document.querySelector(".main .grid-container .hex").setAttribute("class", "hex");
+    hex = "-1";
+    
+    document.querySelector(".main .grid-container .dec").setAttribute("class", "dec active");
+    dec = '1';
+
+    document.querySelector(".main .grid-container .bin").setAttribute("class", "bin");
+    bin = "-1";
+
+    for(let i = 1; i < 5; i++) {
+        document.querySelector(".allconv .convert" + i).className = "convert noactive convert" + i;
+    }
+
+    for(let i = 0; i < 27; i++) {
+        document.getElementById('i' + i).disabled = false;
+    }
+    document.getElementById('i' + 17).disabled = false;
+
+}
+
+function toBin() {
+    expresion = "";
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+    document.querySelector(".main .texta .history").innerHTML = expresion;
+
+    document.querySelector(".main .grid-container .hex").setAttribute("class", "hex");
+    hex = "-1";
+    
+    document.querySelector(".main .grid-container .dec").setAttribute("class", "dec");
+    dec = '-1';
+
+    document.querySelector(".main .grid-container .bin").setAttribute("class", "bin active");
+    bin = "1";
+
+    for(let i = 1; i < 5; i++) {
+        document.querySelector(".allconv .convert" + i).className = "convert noactive convert" + i;
+    }
+
+    for(let i = 0; i < 27; i++) {
+        document.getElementById('i' + i).disabled = false;
+    }
+
+    for(let i = 2; i < 10; i++) {
+        document.getElementById('i' + i).disabled = true
+    }
+
+    for(let i = 15; i < 27; i++) {
+        document.getElementById('i' + i).disabled = true
+    }
+    document.getElementById('i' + 17).disabled = false;
+}
 
 function signsF() {
 
     let signs = "";
     for(let i of expresion) {
-        if(isNaN(i) && i != '.') {
+        if(isNaN(i) && i != '.' && !(/[a-zA-Z]/).test(i)) {
             signs += i;
         }
     }
@@ -19,7 +110,7 @@ function splitF() {
     j = 0;
     let nums = [[""]];
     for(let i of expresion) {
-        if(isNaN(i) && i != '.' && i != '^') {
+        if(isNaN(i) && i != '.' && i != '^' && !(/[a-zA-Z]/).test(i)) {
             nums.push("");
             j++;
         }
@@ -106,11 +197,37 @@ function M_Plus(str) {
 }
 
 function evalF() {
+    let nums = splitF();
+    let signs = signsF();
+
+    let newStr = "";
+    for(let i = 0; i < nums.length; i++) {
+        if(hex == '1') {
+            newStr += '' + parseInt(nums[i], 16);
+        }
+        else if(bin == '1') {
+            newStr += '' + parseInt(nums[i], 2);
+        }
+        else {
+            newStr += nums[i];
+        }
+        if(nums.length - 1 > i) {
+            newStr += signs[i];
+        }
+    }
+
     pow();
-    let res = eval(expresion);
+    let res = '' + eval(newStr);
+    if(hex == '1') {
+        res = res.toString(16);
+    }
+    else if(bin == '1') {
+        res = res.toString(2);
+    }
+
     document.querySelector(".main .texta .output").innerHTML = res;
     document.querySelector(".main .texta .history").innerHTML = expresion;
-    expresion = "0";
+    expresion = res;
     return res;
 }
 
