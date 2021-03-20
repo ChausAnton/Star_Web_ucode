@@ -157,6 +157,35 @@ function clearF() {
     document.querySelector(".main .texta .output").innerHTML = expresion;
 }
 
+function percent() {
+    let nums = splitF();
+    let signs = signsF();
+
+    if(nums.length < 2) {
+        expresion = "";
+        document.querySelector(".main .texta .output").innerHTML = "Error";
+        return 0;
+    }
+
+    let numOfPercent = nums[nums.length - 1];
+    let percentFor = nums[nums.length - 2];
+    nums[nums.length - 1] = "";
+    nums[nums.length - 2] = "";
+    signs = signs.slice(0, -1);
+    
+    let res = '' + (Number(percentFor) + Number((percentFor / 100) * numOfPercent));
+    console.log(signs);
+
+    expresion = "";
+    for(let i = 0; i < nums.length - 1; i++) {
+        expresion += nums[i];
+        if(nums.length - 1 > 1 && signs.length > i) {
+            expresion += signs[i];
+        }
+    }
+    expresion += res;
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+}
 
 function parsString() {
     let str = prompt("input str");
@@ -273,7 +302,6 @@ function rebuildExp(nums, signs, res) {
 function calc_fact() {
     let nums = splitF();
     let signs = signsF();
-    console.log(nums);
 
     let res = factorial(nums[j])
     rebuildExp(nums, signs, res);
@@ -353,11 +381,9 @@ document.getElementById("m2").addEventListener("change", () => {
 
 document.getElementById("g1").addEventListener("change", () => {
     Selected1 = document.getElementById("g1").selectedIndex;
-    console.log(Selected1);
 });
 
 document.getElementById("g2").addEventListener("change", () => {
     Selected2 = document.getElementById("g2").selectedIndex;
-    console.log(Selected2);
 });
 
