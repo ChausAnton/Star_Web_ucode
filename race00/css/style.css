@@ -1,25 +1,208 @@
-.main_box {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+.main{
+    width: 600px;
+
+    background-color: beige;
+    border-radius: 30px;
+    box-shadow: 0px 9px 13px 5px rgba(34, 60, 80, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 25px;
+    
 }
 
-.top_box {
-  width: 350px;
-  height: 200px;
-  border-radius: 5px 5px 0px 0px;
-  border: 2px solid blue;
-  border-bottom: none;
+
+
+
+.texta{
+    padding-right: 30px;
+    background-color: white;
+    border-radius: 30px;
+    
 }
 
-.bottom_box {
-  width: 350px;
-  height: 400px;
-  border-radius: 0px 0px 5px 5px;
-  border: 2px solid blue;
-  border-top: none;
 
-  display: grid;
-  grid-template-columns: 85px 85px 85px 85px;
-  grid-gap:  3px;
+.texta .history{
+    font-size: 30px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column;
+    word-wrap: initial;
+    word-break: break-all;
+    
+
 }
+
+.texta .output{
+    font-size: 30px;
+    width: 100%;
+    min-height: 150px;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column;
+    word-wrap: initial;
+    word-break: break-all;
+}
+
+
+.grid-container input{
+    height: 100%;
+    width: 100%;
+    min-height: 60px;
+    
+    border:none;
+    border-radius: 10px;
+    background-color: lightgray;
+    font-size: 20px;
+    outline:none;
+}
+
+.eq input{
+    background-color: orange;
+}
+
+.convert{
+    width: 600px;
+    background-color: beige;
+    border-radius: 30px;
+    box-shadow: 0px 9px 13px 5px rgba(34, 60, 80, 0.2);
+    padding: 5px 20px;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 25px;
+    margin-right: 25px;
+}
+
+.allconv{
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.noactive{
+    display: none;
+}
+
+.convert .butt div{
+    margin: 10px;
+
+}
+.convert .butt{
+    width: 100%;
+}
+
+.convert input{
+    height: 50px;
+    width: 100%;
+    border:none;
+    border-radius: 10px;
+    font-size: 20px;
+    outline:none;
+}
+
+.dop input{
+    background-color: darkgray;
+    color: white;
+}
+
+
+
+.grid-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+    "dec perev mr mc madd mdep"
+    "dec onex c pom per del"
+    "hex p i1 i2 i3 umn"
+    "hex cor i4 i5 i6 otn"
+    "bin xn i7 i8 i9 add"
+    "bin f t1 i0 r r";
+}
+
+.i1 { grid-area: i1; }
+.i2 { grid-area: i2; }
+.i3 { grid-area: i3; }
+.i4 { grid-area: i4; }
+.i5 { grid-area: i5; }
+.i6 { grid-area: i6; }
+.i7 { grid-area: i7; }
+.i8 { grid-area: i8; }
+.i9 { grid-area: i9; }
+.i0 { grid-area: i0; }
+.t1 { grid-area: t1; }
+.r { grid-area: r; }
+.del { grid-area: del; }
+.umn { grid-area: umn; }
+.otn { grid-area: otn; }
+.add { grid-area: add; }
+.per { grid-area: per; }
+.pom { grid-area: pom; }
+.c { grid-area: c; }
+.f { grid-area: f; }
+.xn { grid-area: xn; }
+.cor { grid-area: cor; }
+.p { grid-area: p; }
+.onex { grid-area: onex; }
+
+.hex { grid-area: hex; }
+.dec { grid-area: dec; }
+.bin { grid-area: bin; }
+
+
+
+
+.active input{
+    background-color:khaki;
+}
+
+.symbols{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.symbols input{
+    height: 80px;
+    width: 70px;
+    border:none;
+    border-radius: 10px;
+    font-size: 20px;
+    outline:none;
+    margin: 10px 15px ;
+}
+
+.convmetrix{
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.convmetrix input{
+    width: 150px;
+    height: 50px;
+    margin: 0 15px;
+    margin-top: 15px;
+}
+
+
+.convmetrix select{
+    width: 80px;
+    height: 50px;
+    margin: 0 15px;
+    margin-top: 15px;
+    border-radius: 15px;
+    border: none;
+    text-align-last: center;
+}
+

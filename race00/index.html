@@ -2,24 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Calculator</title>
-    <meta name="description" content="r00. Calculator">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Calculator</h1>
-    <div class="main_box">
-      <div class="top_box">
-        
-      </div>
-      <div class="bottom_box">
-        
-      </div>
+    <div class="main">
+        <div class="texta">
+            <div class="history">12+353+66</div>
+            <div class="output">112343</div>
+        </div>
+        <div class="grid-container">
+            <div class="hex"><input type="button" value="HEX"></div>
+            <div class="dec active"><input type="button" value="DEC"></div>
+            <div class="bin"><input type="button" value="BIN"></div>
+
+            <div class="i1"><input type="button" value="1" id="i1" onclick="addSymbol(1)"></div>
+            <div class="i2"><input type="button" value="2" id="i2" onclick="addSymbol(2)"></div>
+            <div class="i3"><input type="button" value="3" id="i3" onclick="addSymbol(3)"></div>
+            <div class="i4"><input type="button" value="4" id="i4" onclick="addSymbol(4)"></div>
+            <div class="i5"><input type="button" value="5" id="i5" onclick="addSymbol(5)"></div>
+            <div class="i6"><input type="button" value="6" id="i6" onclick="addSymbol(6)"></div>
+            <div class="i7"><input type="button" value="7" id="i7" onclick="addSymbol(7)"></div>
+            <div class="i8"><input type="button" value="8" id="i8" onclick="addSymbol(8)"></div>
+            <div class="i9"><input type="button" value="9" id="i9" onclick="addSymbol(9)"></div>
+            <div class="i0"><input type="button" value="0" id="i0" onclick="addSymbol(0)"></div>
+            <div class="t1 dop"><input type="button" value="." id="dot"  onclick="addSymbol('.')"></div>
+            <div class="r eq"><input type="button" value="=" onclick="evalF()"></div>
+            <div class="del dop"><input type="button" value="/" onclick="addSymbol('/')"></div>
+            <div class="umn dop"><input type="button" value="*" onclick="addSymbol('*')"></div>
+            <div class="otn dop"><input type="button" value="-" onclick="addSymbol('-')"></div>
+            <div class="add dop"><input type="button" value="+" onclick="addSymbol('+')"></div>
+            <div class="per dop"><input type="button" value="%"></div>
+            <div class="pom dop"><input type="button" value="+/-"></div>
+            <div class="c eq"><input type="button" value="C"></div>
+
+            <div class="p dop"><input type="button" value="π"></div>
+            <div class="f dop"><input type="button" value="!"></div>
+            <div class="xn dop"><input type="button" value="xⁿ"></div>
+            <div class="cor dop"><input type="button" value="√"></div>
+            <div class="onex dop"><input type="button" value="1/x"></div>
+
+            <div class="perev dop"><input type="button" value="⟳"></div>
+            <div class="mr dop"><input type="button" value="MR"></div>
+            <div class="mc dop"><input type="button" value="MC"></div>
+            <div class="madd dop"><input type="button" value="M+"></div>
+            <div class="mdep dop"><input type="button" value="M-"></div>
+        </div>
     </div>
+    <div class="allconv">
+        <div class="convert">
+            <div class="butt">
+                <div class="dop"><input type="button" value="length"></div>
+                <div class="dop"><input type="button" value="weight"></div>
+                <div class="dop"><input type="button" value="area"></div>
+            </div>
+        </div>
+        <div class="convert noactive">
+            <div class="symbols">
+                <div class="dop"><input type="button" value="A"></div>
+                <div class="dop"><input type="button" value="B"></div>
+                <div class="dop"><input type="button" value="C"></div>
+                <div class="dop"><input type="button" value="D"></div>
+                <div class="dop"><input type="button" value="E"></div>
+                <div class="dop"><input type="button" value="F"></div>
+            </div>
+        </div>
+        <div class="convert noactive">
+            <div class="convmetrix">
+                <select id="m1">
+                    <option value="cm" selected>cm</option>
+                    <option value="m">m</option>
+                    <option value="km">km</option>
+                </select> 
+                <input type="number" >   
+                <select id="m2">
+                    <option value="cm">cm</option>
+                    <option value="m" selected>m</option>
+                    <option value="km">km</option>
+                </select>
+                <input type="button" value="Convert">
+            </div>
+            <input type="text" readonly>
+        </div>
+        <div class="convert noactive">
+            <div class="convmetrix">
+                <select id="g1">
+                    <option value="g" selected>g</option>
+                    <option value="kg">kg</option>
+                    <option value=ton>ton</option>
+                </select> 
+                <input type="number" >   
+                <select id="g2">
+                    <option value="g">g</option>
+                    <option value="kg" selected>kg</option>
+                    <option value=ton>ton</option>
+                </select> 
+                <input type="button" value="Convert">
+            </div>
+            <input type="text" readonly>
+        </div>
+        <div class="convert ">
+            <div class="convmetrix">
+                <select id="m1">
+                    <option value="cm2" selected>cm²</option>
+                    <option value="m2">m²</option>
+                    <option value="km2">km²</option>
+                </select> 
+                <input type="number" >   
+                <select id="m2">
+                    <option value="cm2">cm²</option>
+                    <option value="m2" selected>m²</option>
+                    <option value="km2">km²</option>
+                </select>
+                <input type="button" value="Convert">
+            </div>
+            <input type="text" readonly>
+        </div>
+    </div>
+
+
 </body>
+<script src="js/script.js"></script>
 
 </html>

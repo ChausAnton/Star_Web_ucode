@@ -1,4 +1,53 @@
+String.prototype.replaceAt = function (index, char) {
+    if(char=='') {
+        return this.slice(0,index)+this.substr(index+1 + char.length);
+    } else {
+        return this.substr(0, index) + char + this.substr(index + char.length);
+    }
+}
+
 var Memory = 0;
+var expresion = "";
+
+function addSymbol(g) {
+
+    let nums = [[""]];
+    let j = 0;
+
+    for(let i of expresion) {
+        if(isNaN(i) && i != '.') {
+            nums.push("");
+            j++;
+        }
+        else {
+            nums[j] += i;
+        }
+    }
+
+    if(g == '.') {
+        if(expresion.length == 0 || nums[j] == ''){
+            g = '0.';
+        }
+
+        if(nums[j].includes('.')) {
+            g = "";
+        }
+    }
+
+
+   if(isNaN(g) && g != '.') {
+       let index = nums[j].indexOf('.');
+       if(index + 1 == nums[j].length) {
+            expresion = expresion.slice(0, -1) 
+       }
+   }
+
+
+
+    expresion += g;
+
+    document.querySelector(".main .texta .output").innerHTML = expresion;
+}
 
 function parsString() {
     let str = prompt("input str");
@@ -16,12 +65,6 @@ function parsString() {
             nums[j] += i;
         }
     }
-
-    //evalF(str);
-    //calc_fact(str);
-    //pow(str);
-    //sqrtF(str);
-    //calcF(nums, signs);
 }
 
 function MR(str) {
@@ -40,9 +83,10 @@ function M_Plus(str) {
     Memory += str;
 }
 
-function evalF(str) {
-    let res = eval(str);
-    console.log(res);
+function evalF() {
+    let res = eval(expresion);
+    document.querySelector(".main .texta .output").innerHTML = res;
+    document.querySelector(".main .texta .history").innerHTML = expresion;
 }
 
 function pow(nums) {
@@ -78,5 +122,3 @@ function factorial(n) {
     console.log(res);
 
 }*/
-
-parsString();
