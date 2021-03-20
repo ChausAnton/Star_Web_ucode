@@ -170,12 +170,60 @@ function factorial(n) {
 
 function convert(str) {
 
-    for(let i = 2; i <= 5; i++) {
+    for(let i = 2; i < 5; i++) {
         document.querySelector(".allconv .convert" + i).className = "convert noactive convert" + i;
     }
 
     document.querySelector(".allconv ." + str).className = "convert " + str;
+    Selected1 = "0"
+    Selected2 = "0"
+}
 
+function ConverFin(str) {
+    if(str == '1') {
+        let num = document.getElementById('number1').value
+        if(Selected1 < Selected2) {
+            num = (num / 100) / 1000;
+            if(Selected1 == 1) {
+                num *= 100;
+            }
+            else if(Selected2 == 1) {
+                num *= 1000;
+            }
+        }
+        if(Selected1 > Selected2) {
+            num = (num * 100) * 1000;
+            if(Selected2 == 1) {
+                num /= 100;
+            }
+            else if(Selected1 == 1) {
+                num /= 1000;
+            }
+        }
+        document.querySelector(".allconv .convert3 .output1").value = num;
+    }
+    else {
+        let num = document.getElementById('number2').value
+        if(Selected1 < Selected2) {
+            num = (num / 1000) / 1000;
+            if(Selected1 == 1) {
+                num *= 1000;
+            }
+            else if(Selected2 == 1) {
+                num *= 1000;
+            }
+        }
+        if(Selected1 > Selected2) {
+            num = (num * 1000) * 1000;
+            if(Selected2 == 1) {
+                num /= 1000;
+            }
+            else if(Selected1 == 1) {
+                num /= 1000;
+            }
+        }
+        document.querySelector(".allconv .convert4 .output2").value = num;
+    }
 }
 
 document.getElementById("m1").addEventListener("change", () => {
@@ -195,3 +243,4 @@ document.getElementById("g2").addEventListener("change", () => {
     Selected2 = document.getElementById("g2").selectedIndex;
     console.log(Selected2);
 });
+

@@ -122,7 +122,7 @@
     gap: 10px 10px;
     grid-template-areas:
     "dec perev mr mc madd mdep"
-    "dec onex c pom per del"
+    "dec c c onex per del"
     "hex p i1 i2 i3 umn"
     "hex cor i4 i5 i6 otn"
     "bin xn i7 i8 i9 add"
@@ -157,9 +157,6 @@
 .hex { grid-area: hex; }
 .dec { grid-area: dec; }
 .bin { grid-area: bin; }
-
-
-
 
 .active input{
     background-color:khaki;
@@ -204,5 +201,10 @@
     border-radius: 15px;
     border: none;
     text-align-last: center;
+}
+
+input:disabled{
+    background-color: beige;
+    color: beige;
 }
 

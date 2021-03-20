@@ -58,7 +58,6 @@
             <div class="butt">
                 <div class="dop"><input type="button" value="length" onclick="convert('convert3')"></div>
                 <div class="dop"><input type="button" value="weight" onclick="convert('convert4')"></div>
-                <div class="dop"><input type="button" value="area" onclick="convert('convert5')"></div>
             </div>
         </div>
         <div class="convert noactive convert2">
@@ -78,15 +77,15 @@
                     <option value="m">m</option>
                     <option value="km">km</option>
                 </select> 
-                <input type="number" >   
+                <input type="number" id="number1">   
                 <select id="m2">
                     <option value="cm" selected>cm</option>
                     <option value="m">m</option>
                     <option value="km">km</option>
                 </select>
-                <input type="button" value="Convert">
+                <input type="button" value="Convert" onclick="ConverFin('1')">
             </div>
-            <input type="text" readonly>
+            <input type="text" readonly class="output1">
         </div>
         <div class="convert noactive convert4">
             <div class="convmetrix weight">
@@ -95,32 +94,15 @@
                     <option value="kg">kg</option>
                     <option value=ton>ton</option>
                 </select> 
-                <input type="number" >   
+                <input type="number" id="number2">   
                 <select id="g2">
-                    <option value="g">g</option>
-                    <option value="kg" selected>kg</option>
+                    <option value="g" selected>g</option>
+                    <option value="kg">kg</option>
                     <option value=ton>ton</option>
                 </select> 
-                <input type="button" value="Convert">
+                <input type="button" value="Convert" onclick="ConverFin('2')">
             </div>
-            <input type="text" readonly>
-        </div>
-        <div class="convert noactive convert5">
-            <div class="convmetrix area">
-                <select id="m11">
-                    <option value="cm2" selected>cm²</option>
-                    <option value="m2">m²</option>
-                    <option value="km2">km²</option>
-                </select> 
-                <input type="number" >   
-                <select id="m22">
-                    <option value="cm2">cm²</option>
-                    <option value="m2" selected>m²</option>
-                    <option value="km2">km²</option>
-                </select>
-                <input type="button" value="Convert">
-            </div>
-            <input type="text" readonly>
+            <input type="text" readonly class="output2">
         </div>
     </div>
 
