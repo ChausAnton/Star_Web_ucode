@@ -1,6 +1,8 @@
 var Memory = 0;
 var expresion = "";
 var j = 0;
+var Selected1 = '0';
+var Selected2 = '0';
 
 function signsF() {
 
@@ -165,15 +167,31 @@ function factorial(n) {
     return (n != 1) ? n * factorial(n - 1) : 1;
 }
 
-/*function calcF(nums, signs) {
 
-    let res = 0;
-    for(let i of signs) {
-        res = Calc.calculate(nums[0] + i + nums[1]);
-        nums = nums.slice(1, 2);
-        nums = nums.slice(1);
-        nums[0] = res;
+function convert(str) {
+
+    for(let i = 2; i <= 5; i++) {
+        document.querySelector(".allconv .convert" + i).className = "convert noactive convert" + i;
     }
-    console.log(res);
 
-}*/
+    document.querySelector(".allconv ." + str).className = "convert " + str;
+
+}
+
+document.getElementById("m1").addEventListener("change", () => {
+    Selected1 = document.getElementById("m1").selectedIndex;
+});
+
+document.getElementById("m2").addEventListener("change", () => {
+    Selected2 = document.getElementById("m2").selectedIndex;
+});
+
+document.getElementById("g1").addEventListener("change", () => {
+    Selected1 = document.getElementById("g1").selectedIndex;
+    console.log(Selected1);
+});
+
+document.getElementById("g2").addEventListener("change", () => {
+    Selected2 = document.getElementById("g2").selectedIndex;
+    console.log(Selected2);
+});

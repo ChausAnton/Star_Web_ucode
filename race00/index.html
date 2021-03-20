@@ -46,7 +46,7 @@
             <div class="cor dop"><input type="button" value="√" onclick="sqrtF()"></div>
             <div class="onex dop"><input type="button" value="1/x" onclick="oneX()"></div>
 
-            <div class="perev dop"><input type="button" value="⟳"></div>
+            <div class="perev dop"><input type="button" value="⟳" onclick="convert('convert1')"></div>
             <div class="mr dop"><input type="button" value="MR" onclick="MR()"></div>
             <div class="mc dop"><input type="button" value="MC" onclick="MC()"></div>
             <div class="madd dop"><input type="button" value="M+" onclick="M_Minus()"></div>
@@ -54,14 +54,14 @@
         </div>
     </div>
     <div class="allconv">
-        <div class="convert">
+        <div class="convert noactive convert1">
             <div class="butt">
-                <div class="dop"><input type="button" value="length"></div>
-                <div class="dop"><input type="button" value="weight"></div>
-                <div class="dop"><input type="button" value="area"></div>
+                <div class="dop"><input type="button" value="length" onclick="convert('convert3')"></div>
+                <div class="dop"><input type="button" value="weight" onclick="convert('convert4')"></div>
+                <div class="dop"><input type="button" value="area" onclick="convert('convert5')"></div>
             </div>
         </div>
-        <div class="convert noactive">
+        <div class="convert noactive convert2">
             <div class="symbols">
                 <div class="dop"><input type="button" value="A"></div>
                 <div class="dop"><input type="button" value="B"></div>
@@ -71,8 +71,8 @@
                 <div class="dop"><input type="button" value="F"></div>
             </div>
         </div>
-        <div class="convert noactive">
-            <div class="convmetrix">
+        <div class="convert noactive convert3">
+            <div class="convmetrix length">
                 <select id="m1">
                     <option value="cm" selected>cm</option>
                     <option value="m">m</option>
@@ -80,16 +80,16 @@
                 </select> 
                 <input type="number" >   
                 <select id="m2">
-                    <option value="cm">cm</option>
-                    <option value="m" selected>m</option>
+                    <option value="cm" selected>cm</option>
+                    <option value="m">m</option>
                     <option value="km">km</option>
                 </select>
                 <input type="button" value="Convert">
             </div>
             <input type="text" readonly>
         </div>
-        <div class="convert noactive">
-            <div class="convmetrix">
+        <div class="convert noactive convert4">
+            <div class="convmetrix weight">
                 <select id="g1">
                     <option value="g" selected>g</option>
                     <option value="kg">kg</option>
@@ -105,15 +105,15 @@
             </div>
             <input type="text" readonly>
         </div>
-        <div class="convert ">
-            <div class="convmetrix">
-                <select id="m1">
+        <div class="convert noactive convert5">
+            <div class="convmetrix area">
+                <select id="m11">
                     <option value="cm2" selected>cm²</option>
                     <option value="m2">m²</option>
                     <option value="km2">km²</option>
                 </select> 
                 <input type="number" >   
-                <select id="m2">
+                <select id="m22">
                     <option value="cm2">cm²</option>
                     <option value="m2" selected>m²</option>
                     <option value="km2">km²</option>
