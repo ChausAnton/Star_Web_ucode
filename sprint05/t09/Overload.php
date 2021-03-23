@@ -26,6 +26,7 @@
             if(!array_key_exists($arraykey, $this->store)){
                 return $this->store[$arraykey] = "NO SET";
             }
+            return isset($this->store[$arraykey]);
         }
 
     }
