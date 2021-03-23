@@ -2,7 +2,7 @@
     trait Update {
         function makeBoom() {
             $arr = array(
-                "2 x Repulsors",
+                parent::makeBoom(),
                 "134 7.62mm Minigun",
                 "2 x FN F2000 Tacticals",
                 "sidewinder\"Ex-Wife\" Self-Guided Missile",
