@@ -1,9 +1,13 @@
 <?php
-include 'index.php';
-    echo ('$iron_man    is ' . gettype($iron_man) .' '. $iron_man . "\n");
-    echo ('$war_machine is ' . gettype($war_machine) .' '. $war_machine . "\n");
-    echo ('$var0        is ' . gettype($var0) .' '. $var0 . "\n");
-    echo ('$var1        is ' . gettype($var1) .' '. $var1 . "\n");
-    echo ('$var2        is ' . gettype($var2) .' '. $var2 . "\n");
-    echo ('$var3        is ' . gettype($var3) .' '. $var3 . "\n");
+    require_once(__DIR__ . "/Avenger.php");
+    $first_avenger = new Avenger("Tony Stark", "Iron Man", "man", 38,
+                                ["intelligence", "durability", "magnetism"]);
+    $second_avenger = new Avenger("Natasha Romanoff", "Black Widow", "woman", 35,
+                                ["agility", "martial arts"]);
+    echo "*** calling \$first_avenger() ***\n";
+    $first_avenger();
+    echo "*** calling echo \$second_avenger ***\n";
+    echo $second_avenger;
+    echo "*** calling \$second_avenger() ***\n";
+    $second_avenger();
 ?>
