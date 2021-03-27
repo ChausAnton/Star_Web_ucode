@@ -1,9 +1,21 @@
 <?php
-include 'index.php';
-echo("*** Range is 3 - 7 checkDivision(3, 7) ***\n");
-checkDivision(3, 7);
-echo("\n*** Range is 57 - ... checkDivision(58) ***\n");
-checkDivision(58);
-echo("\n*** Range is ... - ... checkDivision() ***\n");
-checkDivision();
+    require_once(__DIR__ . "/Team.php");
+    $arr = array();
+    $arr[0] = new Avenger("Tony Stark", "Iron Man", "man", 38,
+                                ["intelligence", "durability", "magnetism"], 120);
+    $arr[1] = new Avenger("Natasha Romanoff", "Black Widow", "woman", 35,
+                                ["agility", "martial arts"], 75);
+    $arr[2] = new Avenger("Carol Danvers", "Captain Marvel", "woman", 27,
+                                ["durability", "flight", "interstellar travel"], 95);
+    $team = new Team(1, $arr);
+    echo "Battle 1\n";
+    $cloned_team = clone $team;
+    $damage = 25;
+    $team->battle($damage);
+    $team->calculate_losses($cloned_team);
+    echo "\nBattle 2\n";
+    $cloned_team = clone $team;
+    $damage = 80;
+    $team->battle($damage);
+    $team->calculate_losses($cloned_team);
 ?>
