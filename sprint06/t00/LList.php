@@ -1,7 +1,60 @@
 <?php
     require_once(__DIR__. "/LLItem.php");
 
-    class LList {
+
+    class LinkedListIterator implements Iterator {
+
+        private $var = array();
+
+        public function __construct($array) {
+
+            if (is_array($array)) {
+
+                $this->var = $array;
+
+            }
+
+        }
+
+        public function rewind() {
+
+            reset($this->var);
+
+        }
+
+        public function current() {
+
+            $var = current($this->var);
+            return $var;
+
+        }
+
+        public function key() {
+
+            $var = key($this->var);
+            return $var;
+
+        }
+
+        public function next() {
+
+            $var = next($this->var);
+            return $var;
+
+        }
+
+        public function valid() {
+
+            $key = key($this->var);
+            $var = ($key !== NULL && $key !== FALSE);
+            return $var;
+
+        }
+
+    }
+    
+
+    class LList implements IteratorAggregate {
         function __construct() {
             $this->head = NULL;
         }
@@ -48,7 +101,6 @@
                 $cur = $cur->next;
             }
             echo $cur->data;
-            return 0;
         }
 
         function contains($value) {
@@ -103,24 +155,46 @@
             }
             return 0;
         }
+
+        public function getIterator() {
+
+            $temp = $this->head;
+
+            $tempArr = [];
+            $i = 0;
+
+            while($temp != null) {
+
+                $tempArr[$i] = $temp->data;
+                $i++;
+
+                $temp = $temp->next;
+
+            }
+
+            $itName = new LinkedListIterator($tempArr);
+            return $itName;
+
+        }
     }
 
-    $List = new LList();
-    $Arr = [4, 3, 3, 3, 2, 3, 5, 6, 3, 7, 8, 7, 4, 4];
-    $List->addArr($Arr);
-    //$List->clear();
-    //$List->remove(3);
-    //$List->removeAll(4);
-    //$List1 = $List->getFirs();
-    //echo $List1->data;
+   /* function autoload($pClassName){
+        include(__DIR__ . "/" . $pClassName . ".php");
+    }
 
-    //$List2 = $List->getLast();
-    //echo $List2->data;
-    //$List->contains(7)
-    //$List->toString();
-    /*$List->add(4);
-    $List->add(3);
-    $List->add(2);*/
-    //echo $List->head->next->data;
-    //echo $List->count();
+    spl_autoload_register("autoload");
+
+    $list = new LList();
+    $list->addArr([100, 1, 2, 3, 100, 4, 5, 100]);
+    $list->removeAll(100);
+    $list->add(10);
+    echo  $list->contains(10) . "\n"; // 1
+    echo $list->toString() . "\n"; // 1, 2, 3, 4, 5, 10
+    $sum = 0;
+    $iter = $list->getIterator();
+    foreach ($iter as $v)
+        $sum += $v;
+    echo "$sum\n"; // 25
+    $list->clear();
+    echo $list->toString() . "\n";*/
 ?>
