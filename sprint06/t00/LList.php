@@ -75,31 +75,52 @@
         }
 
         function remove($value) {
+            if($this->head->data == $value) {
+                $this->head = $this->head->next;
+                return 1;
+            }
+
             $cur = $this->head;
-            while($cur->data != $value && $cur) {
+            while($cur->next->data != $value && $cur) {
                 $cur = $cur->next;
             }
 
-            if($cur->data == $value) {
-                
+            if($cur->next->data == $value) {
+                $cur->next = $cur->next->next;
+                return 1;
             }
+            return 0;
+        }
+
+        function removeAll($value) {
+            while($this->remove($value) == 1) {}
+            return 0;
+        }
+
+        function clear() {
+            while( $this->getLast()->data != NULL) {
+                $this->remove($this->getLast()->data);
+            }
+            return 0;
         }
     }
 
     $List = new LList();
-    $Arr = [4, 3, 2];
+    $Arr = [4, 3, 3, 3, 2, 3, 5, 6, 3, 7, 8, 7, 4, 4];
     $List->addArr($Arr);
+    //$List->clear();
+    //$List->remove(3);
+    //$List->removeAll(4);
+    //$List1 = $List->getFirs();
+    //echo $List1->data;
 
-    $List1 = $List->getFirs();
-    echo $List1->data;
-
-    $List2 = $List->getLast();
-    echo $List2->data;
+    //$List2 = $List->getLast();
+    //echo $List2->data;
     //$List->contains(7)
     //$List->toString();
     /*$List->add(4);
     $List->add(3);
     $List->add(2);*/
-    //echo $List->head->next->next->data;
+    //echo $List->head->next->data;
     //echo $List->count();
 ?>
