@@ -1,13 +1,9 @@
 <?php
-    include 'index.php';
-
-    echo('"testing String" : ' . firstUpper("testing String")) . "\n";
-    echo('"   testing   String" : ' . firstUpper("   testing   String")) . "\n";
-    echo('"07" : ' . firstUpper("07")) . "\n";
-    echo('"" : ' . firstUpper("")) . "\n";
-    echo('true : ' . firstUpper(true)) . "\n";
-    echo('NULL : ' . firstUpper(NULL)) . "\n";
-
-    echo(firstUpper("   ...I Will Rebuild Krypton Atop His Bones.")) . "\n";
-    echo(firstUpper(" 300room FOR yoUr   DESTiny   ")) . "\n";
+    include_once ("Ant.php");
+    $ant = new Ant("Anthony", "sergeant", "2015-07-16", 1, 4);
+    $serialized = serialize($ant);
+    echo $serialized . "\n\n";
+    
+    $unserialized = unserialize($serialized);
+    echo $unserialized;
 ?>
