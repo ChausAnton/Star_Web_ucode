@@ -33,10 +33,15 @@
 
             for($i = 0; $i < count($this->avengers); $i++) {
                 if($this->avengers[$i]->hp <= 0) {
-                    $i = 0;
                     array_splice($this->avengers, $i, 1);
+                    $i = 0;
                 }
             }
+
+            if($this->avengers[0]->hp <= 0) {
+                array_shift($this->avengers);
+            }
+
         }
 
         function calculate_losses($cloned_team) {
