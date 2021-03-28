@@ -1,12 +1,37 @@
 <?php
-    include 'index.php';
+    require_once("EatException.php");
+    require_once("Ingestion.php");
+    require_once("Product.php");
 
-    $basket_total = total(1, 0.1);
-    $basket_total = total(1, 0.2, $basket_total);
+    $namesProducts = [
+      'Nutella',
+      'Chicken',
+      'Coca-Cola',
+      'Biscuit',
+      'Brocolli',
+      'Tomatoes',
+      'Apple',
+      'Potato',
+      'Pizza',
+    'Beer'
+    ];
 
-    echo "\nPrice of order is $basket_total\n";
-
-    $basket_total = total(3, 1.4, $basket_total);
-
-    echo "\nPrice of order is $basket_total\n";
+    $stock = new Ingestion('breakfast', 1);
+    foreach ($namesProducts as $name) {
+      $stock->setProduct(new Product($name, rand(40, 500)));
+    }
+    
+    $allProducts = $stock->getProducts();
+    foreach ($namesProducts as $product) {
+      $count = rand(1, 5);
+      try {
+        echo "***\nGetting " . $allProducts[$product]->getName() . " that has ";
+        echo $allProducts[$product]->getKcal() . " calories.\n";
+        $stock->get_from_fridge($product);
+        echo "You're doing great, " . $product . " is good!\n";
+      } catch (EatException $e) {
+        echo "Caught exception: ". $e->getMessage() . "! ";
+        echo "Throw " . $product . " away!\n";
+      }
+    }
 ?>
