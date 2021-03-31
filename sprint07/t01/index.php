@@ -9,7 +9,7 @@
     <body>
         <form action="index.php" method="post" class="form_box"  style="border: 2px solid gray; padding: 20px;">
             <div class="firs_data" style="border: 2px solid gray; padding: 20px 20px 20px 20px;">
-                <p class="About_the_superhero" style=" position: relative;background-color: white;bottom: 45px;margin-bottom: -30px;width: 135px;">About HERO</p>
+                <p class="About_the_superhero" style=" position: relative;background-color: white;bottom: 45px;margin-bottom: -30px;width: 90px;">About HERO</p>
                 <span>Real Name</span> 
                 <input type="text" class="real_name" placeholder="Tell your name" name="name"> 
                 <span>Current Alias</span>      
@@ -32,7 +32,7 @@
                 <input type="range" id="Level_of_control" name="Level_of_control" min="0" max="10" value="0">
             </div>
             <div class="three" style="border: 2px solid gray;padding: 30px;margin: 10px 0px 0px 0px;"> 
-                <p class="Origin_of_powes" style="position: relative;background-color: white;bottom: 55px;margin-bottom: -30px;width: 107px;">Publicity</p>
+                <p class="Origin_of_powes" style="position: relative;background-color: white;bottom: 55px;margin-bottom: -30px;width: 60px;">Publicity</p>
                 <input type="radio" name="or_radio" value="1"> <span>UNKNOWN</span>
                 <input type="radio" name="or_radio" value="2"> <span>LIKE A GHOST</span>
                 <input type="radio" name="or_radio" value="3"> <span>I AM IN COMICS</span>
