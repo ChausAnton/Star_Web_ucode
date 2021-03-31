@@ -9,10 +9,10 @@
     <body>
         <form action="index.php" method="post" class="form_box"  style="border: 2px solid gray; padding: 20px;">
             <div class="firs_data" style="border: 2px solid gray; padding: 20px 20px 20px 20px;">
-                <p class="About_the_superhero" style=" position: relative;background-color: white;bottom: 45px;margin-bottom: -30px;width: 135px;">About the Superhero</p>
-                <span>Name</span> 
+                <p class="About_the_superhero" style=" position: relative;background-color: white;bottom: 45px;margin-bottom: -30px;width: 135px;">About HERO</p>
+                <span>Real Name</span> 
                 <input type="text" class="real_name" placeholder="Tell your name" name="name"> 
-                <span>E-mail</span>      
+                <span>Current Alias</span>      
                 <input type="text" class="Superhero name" placeholder="Tell your E-mail" name="email">
                 <span>Age</span>
                 <input type="number" class="age" min="1" max="999" name="age">
@@ -32,12 +32,12 @@
                 <input type="range" id="Level_of_control" name="Level_of_control" min="0" max="10" value="0">
             </div>
             <div class="three" style="border: 2px solid gray;padding: 30px;margin: 10px 0px 0px 0px;"> 
-                <p class="Origin_of_powes" style="position: relative;background-color: white;bottom: 55px;margin-bottom: -30px;width: 107px;">Origin of Powes</p>
-                <input type="radio" name="or_radio"> <span>Unknown</span>
-                <input type="radio" name="or_radio"> <span>Freak lab accident</span>
-                <input type="radio" name="or_radio"> <span>Chosen by an ancient wise being</span>
-                <input type="radio" name="or_radio"> <span>The superhero i not human</span>
-                <input type="radio" name="or_radio"> <span>Other</span>
+                <p class="Origin_of_powes" style="position: relative;background-color: white;bottom: 55px;margin-bottom: -30px;width: 107px;">Publicity</p>
+                <input type="radio" name="or_radio" value="1"> <span>UNKNOWN</span>
+                <input type="radio" name="or_radio" value="2"> <span>LIKE A GHOST</span>
+                <input type="radio" name="or_radio" value="3"> <span>I AM IN COMICS</span>
+                <input type="radio" name="or_radio" value="4"> <span>I HAVE FUN CLUB</span>
+                <input type="radio" name="or_radio" value="5"> <span>SUPERSTAR</span>
             </div>
             <input type="reset" value="CLEAR" class="reset">
             <input type="submit" value="SEND" class="send">
