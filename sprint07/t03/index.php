@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(isset($_POST['Clear'])) {
+        session_destroy();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,10 +27,18 @@
         <input type="submit" value="Clear" name="Clear">
     </form>
     <?php
+    
         if(isset($_POST['charset']) && isset($_POST['code'])) {
+            $_SESSION["str_to"] = $_POST['Input1'];
             foreach($_POST['code'] as $i => $v) {
+                utf8_encode($_SESSION["str_to"]);
                 echo "$v";
-                echo "<textarea name='str'>" . $_POST['Input1'] . "</textarea><br>";
+                $to = $v;
+                if(strpos($v, "ISO") || $i == 1) {
+                    $to = $to . "//TRANSLIT";
+                }
+                
+                echo "<textarea name='str'>" . iconv("UTF-8", $to, $_SESSION["str_to"]) . "</textarea><br>";
             }
         }
     ?>
