@@ -1,6 +1,7 @@
 <?php
     class FilesList {
         function __construct($path) {
+            $this->files = [];
             if(file_exists($path)) {
                 $this->files = array_diff(scandir($path), array('.', '..'));
             }

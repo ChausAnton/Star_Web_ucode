@@ -5,28 +5,27 @@
                 mkdir("tmp");
             }
             
-            $this->file_name = $file_name . ".txt";
-            $this->file = fopen($this->file_name, "w");
-            fclose($this->file);
+            $this->file_name = $file_name;
+            if(!file_exists($this->file_name )) {
+                $this->file = fopen($this->file_name, "c");
+                fclose($this->file);
+            }
         }
 
         function write($content) {
             if(file_exists($this->file_name)) {
-                $this->file = fopen($this->file_name, 'w');
-                fwrite($this->file, $content);
-                fclose($this->file);
+                file_put_contents ($this->file_name, $content, FILE_APPEND);
             }
         }
 
         function toList() {
             if(file_exists($this->file_name)) {
-                return file_get_contents($this->file_name, FILE_USE_INCLUDE_PATH);
-
+                return file_get_contents($this->file_name);
             }
         }
     }
 
-    function autoload($pClassName) {
+    /*function autoload($pClassName) {
         include(__DIR__. '/' . $pClassName. '.php');
     } 
     spl_autoload_register("autoload");
@@ -36,5 +35,5 @@
     echo $file->toList() . "\n";
 
     $list = new FilesList("tmp");
-    echo $list->toList() . "\n"
+    echo $list->toList() . "\n"*/
 ?>
