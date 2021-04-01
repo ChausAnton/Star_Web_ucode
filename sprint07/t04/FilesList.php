@@ -13,5 +13,5 @@
             }
             return $res_string;
         }
-    }
+    } 
 ?>
