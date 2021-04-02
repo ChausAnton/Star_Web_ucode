@@ -24,14 +24,9 @@
         }
 
         private function rewriteSerializeNote() {
-            $this->serializeNotes = NULL;
+            unset($this->serializeNotes);
             foreach($this->notes as $note) {
-                if($this->serializeNotes) {
-                    array_push($this->serializeNotes, serialize($note));
-                }
-                else {
-                    $this->serializeNotes = [serialize($note)];
-                }
+                $this->addSerializeNote($note);
             }
         }
 

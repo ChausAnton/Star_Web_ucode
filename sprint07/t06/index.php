@@ -73,13 +73,14 @@
             $fileR = file_get_contents($fileName);
             $notePad = unserialize($fileR);
             $notePad->unserializeArray();
-
-            echo '<ul>';
-            foreach($notePad->notes as $v) {
-                echo '<li><a href="?noteContent=' . $v->name . '">' . $v->date . ' > ' . $v->name
-                . '</a><a href="?deleteNote=' . $v->name . '"> DELETE</a></li>';
+            if(isset($notePad->notes)) {
+                echo '<ul>';
+                foreach($notePad->notes as $v) {
+                    echo '<li><a href="?noteContent=' . $v->name . '">' . $v->date . ' > ' . $v->name
+                    . '</a><a href="?deleteNote=' . $v->name . '"> DELETE</a></li>';
+                }
+                echo '</ul>';
             }
-            echo '</ul>';
         }
     ?>
     <h2>Detail of "some"</h2>
@@ -111,8 +112,12 @@
                 $notePad = unserialize($fileR);
                 $notePad->unserializeArray();
 
+                fclose(fopen ($fileName, "w+"));
+                
                 $notePad->deleteElement($_GET['deleteNote']);
+                $notePad->notes = NULL;
                 file_put_contents ($fileName, serialize($notePad));
+
                 echo '<script>window.location = window.location.href.split("?")[0];</script>';
             }
         }
