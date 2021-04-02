@@ -68,6 +68,7 @@
             $notePad->unserializeArray();
 
         }
+
         if(file_exists($fileName)) {
             $fileR = file_get_contents($fileName);
             $notePad = unserialize($fileR);
@@ -80,8 +81,41 @@
             }
             echo '</ul>';
         }
-       
     ?>
     <h2>Detail of "some"</h2>
+    <?php
+        $fileName = "NotePad";
+        $fileR = "";
+        if(isset($_GET['noteContent'])) {
+            if(file_exists($fileName)) {
+                $fileR = file_get_contents($fileName);
+                $notePad = unserialize($fileR);
+                $notePad->unserializeArray();
+
+                echo "<ul>";
+                foreach($notePad->notes as $v) {
+                    if($v->name == $_GET['noteContent']) {
+                        echo "<li>date: <b> $v->date</b></li>";
+                        echo "<li>name: <b> $v->name</b></li>";
+                        echo "<li>importance: <b> " . $v->importance[0] . "</b></li>";
+                        echo "<li>content: <b> $v->content</b></li>";
+                    }
+                }
+                echo "</ul>";
+            }
+        }
+
+        if(isset($_GET['deleteNote'])) {
+            if(file_exists($fileName)) {
+                $fileR = file_get_contents($fileName);
+                $notePad = unserialize($fileR);
+                $notePad->unserializeArray();
+
+                $notePad->deleteElement($_GET['deleteNote']);
+                file_put_contents ($fileName, serialize($notePad));
+                echo '<script>window.location = window.location.href.split("?")[0];</script>';
+            }
+        }
+    ?>
 </body>
 </html>

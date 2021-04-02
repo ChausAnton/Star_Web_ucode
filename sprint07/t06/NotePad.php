@@ -17,6 +17,24 @@
             }
         }
 
+        function deleteElement($name) {
+            $index = array_search($name, $this->notes);
+            array_splice($this->notes, $index, 1);
+            $this->rewriteSerializeNote();
+        }
+
+        private function rewriteSerializeNote() {
+            $this->serializeNotes = NULL;
+            foreach($this->notes as $note) {
+                if($this->serializeNotes) {
+                    array_push($this->serializeNotes, serialize($note));
+                }
+                else {
+                    $this->serializeNotes = [serialize($note)];
+                }
+            }
+        }
+
         function addSerializeNote($note) {
             if($this->serializeNotes) {
                 array_push($this->serializeNotes, serialize($note));
