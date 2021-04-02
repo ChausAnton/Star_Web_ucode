@@ -44,11 +44,10 @@
     </form>
     <h2>List of notes</h2>
     <?php
-
+        $fileName = "NotePad";
+        $fileR = "";
         if(isset($_POST['note_name']) && isset($_POST['content']) && isset($_POST['Create_note'])) {
-            $fileR = "";
             $notePad = "";
-            $fileName = "NotePad";
             $newNote = new Note($_POST['note_name'], $_POST['importance'], $_POST['content']);
             if(file_exists($fileName)) {
                 $fileR = file_get_contents($fileName);
@@ -68,10 +67,19 @@
 
             $notePad->unserializeArray();
 
-            var_dump($notePad->notes);
-
         }
-            //file_put_contents ($this->fileName, $this->notes);
+        if(file_exists($fileName)) {
+            $fileR = file_get_contents($fileName);
+            $notePad = unserialize($fileR);
+            $notePad->unserializeArray();
+
+            echo '<ul>';
+            foreach($notePad->notes as $v) {
+                echo '<li><a href="?noteContent=' . $v->name . '">' . $v->date . ' > ' . $v->name
+                . '</a><a href="?deleteNote=' . $v->name . '"> DELETE</a></li>';
+            }
+            echo '</ul>';
+        }
        
     ?>
     <h2>Detail of "some"</h2>
