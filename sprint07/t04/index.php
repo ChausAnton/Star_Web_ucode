@@ -32,7 +32,14 @@
             $_SESSION['file_array'] = new FilesList("tmp");
             echo $_SESSION['file_array']->toList();
         ?>
-        <h2>Selected file:</h2>
+        <h2>Selected file: <?php
+        if(isset($_GET["file"])) {
+            echo '"tmp/' . $_GET["file"] . '"';
+        }
+        else {
+            echo "";
+        }
+        ?></h2>
         <input type="submit" value="Deleate file" name="Delete_file">
         <?php
             if(isset($_POST['Delete_file']) && isset($_GET["file"])) {
