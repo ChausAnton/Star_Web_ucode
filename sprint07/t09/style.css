@@ -1,0 +1,22 @@
+div {
+    background: #191A25;
+    border: 1px solid #C94239;
+    padding: 8px;
+    margin: 5px;
+}
+
+.block {
+    background: white;
+}
+
+.key {
+    color: #5498AA;
+}
+
+.value{
+    color: #6D7825;
+}
+
+.header {
+    color: white;;
+}
