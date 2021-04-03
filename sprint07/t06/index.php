@@ -83,7 +83,14 @@
             }
         }
     ?>
-    <h2>Detail of "some"</h2>
+    <h2>Detail of <?php
+    if(isset($_GET['noteContent'])) {
+        echo $_GET['noteContent'];
+    }
+    else {
+        echo "";
+    }
+    ?></h2>
     <?php
         $fileName = "NotePad";
         $fileR = "";
