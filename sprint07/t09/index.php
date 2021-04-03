@@ -44,26 +44,6 @@
             $out .= '</div>';
             return $out;
         }
-
-        /*function parseJSON($json) {
-            $output = "<div class=\"block\">";
-            foreach ($json as $key => $value) {
-                if (is_array($value)) {
-                    $output .= "<span class=\"header\"><br>$key:</span>";
-                    $output .= parseJSON($value);
-                } 
-                else {
-                    $output .= "
-                        <div>
-                            <span class=\"key\">$key: </span>
-                            <span class=\"value\">$value</span>
-                        </div>
-                    ";
-                }
-            }
-            $output .= "</div>";
-            return $output;
-        }*/
     ?>
 </body>
 </html>
