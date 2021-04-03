@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.input_url {
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+img {
+    width: 1000px;
+    height: 1000px;
+}
