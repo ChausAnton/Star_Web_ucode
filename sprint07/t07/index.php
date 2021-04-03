@@ -39,3 +39,5 @@ table td {
     print_r($listAvengerQuote->fromXML("file.xml"));
     echo '</pre></td></tr></table>';
 ?>
+</body>
+</html>
