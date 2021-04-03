@@ -16,33 +16,66 @@
 
         <?php
             if(isset($_POST['url']) && isset($_POST['go'])) {
-                extension_loaded('imagick');
-                $imageUrl = $_POST['url'];
-                $image = 'original.jpg';
-                $ch = curl_init($imageUrl);
-                $fp = fopen($image, 'wb');
-                curl_setopt($ch, CURLOPT_FILE, $fp);
-                curl_setopt($ch, CURLOPT_HEADER, 0);
-                curl_exec($ch);
-                curl_close($ch);
-                fclose($fp);
+                if(strpos($_POST['url'], ".jpeg") || strpos($_POST['url'], ".jpg")) {
+                    extension_loaded('imagick');
+                    $imageUrl = $_POST['url'];
+                    $image = 'original.jpg';
+                    $ch = curl_init($imageUrl);
+                    $fp = fopen($image, 'wb');
+                    curl_setopt($ch, CURLOPT_FILE, $fp);
+                    curl_setopt($ch, CURLOPT_HEADER, 0);
+                    curl_exec($ch);
+                    curl_close($ch);
+                    fclose($fp);
 
-                $resourse = imagecreatefromjpeg($image);
-                $size = min(imagesx($resourse), imagesy($resourse));
-                $fin = imagecreatetruecolor($size * 2, $size * 2);
+                    $resourse = imagecreatefromjpeg($image);
+                    $size = min(imagesx($resourse), imagesy($resourse));
+                    $fin = imagecreatetruecolor($size * 2, $size * 2);
+    
+                    $resourse = imagecreatefromjpeg($image);
+                    imagecopyresampled($fin, $resourse, 0, 0, 0, 0, $size, $size, $size, $size);
+                    imagefilter($resourse, IMG_FILTER_COLORIZE, 255, 0, 0);
+                    imagecopyresampled($fin, $resourse, $size, $size, 0, 0, $size, $size, $size, $size);
+    
+                    $resourse = imagecreatefromjpeg($image);
+                    imagefilter($resourse, IMG_FILTER_COLORIZE, 0, 255, 0);
+                    imagecopyresampled($fin, $resourse, $size, 0, 0, 0, $size, $size, $size, $size);
+    
+                    $resourse = imagecreatefromjpeg($image);
+                    imagefilter($resourse, IMG_FILTER_COLORIZE, 0, 0, 255);
+                    imagecopyresampled($fin, $resourse, 0, $size, 0, 0, $size, $size, $size, $size);
+                }
+                else if(strpos($_POST['url'], ".png")) {
+                    extension_loaded('imagick');
+                    $imageUrl = $_POST['url'];
+                    $image = 'original.png';
+                    $ch = curl_init($imageUrl);
+                    $fp = fopen($image, 'wb');
+                    curl_setopt($ch, CURLOPT_FILE, $fp);
+                    curl_setopt($ch, CURLOPT_HEADER, 0);
+                    curl_exec($ch);
+                    curl_close($ch);
+                    fclose($fp);
 
-                $resourse = imagecreatefromjpeg($image);
-                imagecopyresampled($fin, $resourse, 0, 0, 0, 0, $size, $size, $size, $size);
-                imagefilter($resourse, IMG_FILTER_COLORIZE, 255, 0, 0);
-                imagecopyresampled($fin, $resourse, $size, $size, 0, 0, $size, $size, $size, $size);
+                    $resourse = imagecreatefrompng($image);
+                    $size = min(imagesx($resourse), imagesy($resourse));
+                    $fin = imagecreatetruecolor($size * 2, $size * 2);
+    
+                    $resourse = imagecreatefrompng($image);
+                    imagecopyresampled($fin, $resourse, 0, 0, 0, 0, $size, $size, $size, $size);
+                    imagefilter($resourse, IMG_FILTER_COLORIZE, 255, 0, 0);
+                    imagecopyresampled($fin, $resourse, $size, $size, 0, 0, $size, $size, $size, $size);
+    
+                    $resourse = imagecreatefrompng($image);
+                    imagefilter($resourse, IMG_FILTER_COLORIZE, 0, 255, 0);
+                    imagecopyresampled($fin, $resourse, $size, 0, 0, 0, $size, $size, $size, $size);
+    
+                    $resourse = imagecreatefrompng($image);
+                    imagefilter($resourse, IMG_FILTER_COLORIZE, 0, 0, 255);
+                    imagecopyresampled($fin, $resourse, 0, $size, 0, 0, $size, $size, $size, $size);
+                }
 
-                $resourse = imagecreatefromjpeg($image);
-                imagefilter($resourse, IMG_FILTER_COLORIZE, 0, 255, 0);
-                imagecopyresampled($fin, $resourse, $size, 0, 0, 0, $size, $size, $size, $size);
-
-                $resourse = imagecreatefromjpeg($image);
-                imagefilter($resourse, IMG_FILTER_COLORIZE, 0, 0, 255);
-                imagecopyresampled($fin, $resourse, 0, $size, 0, 0, $size, $size, $size, $size);
+                
 
                 imagepng($fin, "fin.png");
                 unlink($image);
