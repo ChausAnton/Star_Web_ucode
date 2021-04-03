@@ -25,8 +25,8 @@
                 $file->write($_POST['content']);
             }
         ?>
-    </from>
-    <form action="" mathod="POST">
+    </form>
+    <form action="" method="POST">
         <h2>List of files:</h2>
         <?php
             $_SESSION['file_array'] = new FilesList("tmp");
