@@ -17,8 +17,11 @@ table td {
 </style>
 <h1>Avenger Quote to XML</h1>
 <?php
-    function autoload($pClassName) { include(__DIR__. '/' . $pClassName. '.php'); }
+    function autoload($pClassName) { 
+      include(__DIR__. '/' . $pClassName. '.php'); 
+    }
     spl_autoload_register("autoload");
+    
     $avengerQuote1 = new AvengerQuote(6206, "Tony Stark", "I know i said no mire suprises, \n but i gotta say, i was really hoping to pull off one last one.", [ "1.jpg"]);
     $avengerQuote1->addComment("My first favorite quote of Tony Stark.");
 
