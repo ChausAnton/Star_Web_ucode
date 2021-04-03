@@ -15,6 +15,8 @@
     </form>
     <?php
         if(isset($_POST['go'])) {
+        echo '<div style="width: 100%;display: flex;"><span style="border-top: 2px solid black;border-bottom: 2px solid black;">' . "url: " . $_POST['url'] ."</span></div><br>";
+
             $html = file_get_contents($_POST['url']);
             
             $html = explode("<body", $html)[1];
