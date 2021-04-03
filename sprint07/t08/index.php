@@ -7,22 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>What Thano did for the Soul Stone?</h1>
-    <form action="index.php" method="post">
-        <input type="radio" name="radioButton" value="1"><span>Jumped from the mountain</span><br>
-        <input type="radio" name="radioButton" value="2"><span>Make stone keeper to jump from the mountain</span><br>
-        <input type="radio" name="radioButton" value="3"><span>Pushe Gamora off the mountain</span><br>
-        <button type="submit">I made a choice!</button><br>
+    <h1>Show other sites</h1>
+    <form action="" method="POST">
+        <input name="url" placeholder="url">
+        <input type="submit" name="go" value="go">
+        <a href="">BACK</a>
     </form>
     <?php
-        $temp = $_POST['radioButton'];
-        if($temp && $temp <= 2) {
-            echo"<p>Mistake</p>";
-        }
-        else if($temp) {
-            echo"<p>Right</p>";
+        if(isset($_POST['go'])) {
+            $html = file_get_contents($_POST['url']);
+            
+            $html = explode("<body", $html)[1];
+            $html = explode("</body>", $html)[0];
+            $html = "<body" . $html . "</body>";
+
+            $html = str_replace("<", "&#60;", $html);
+            $html = str_replace(">", "&#62;", $html);
+            $html = nl2br($html);
+            echo $html;
         }
     ?>
 </body>
 </html>
-

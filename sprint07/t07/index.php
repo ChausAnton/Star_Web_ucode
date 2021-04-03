@@ -31,12 +31,12 @@ table td {
     $listAvengerQuote = new ListAvengerQuotes();
     $listAvengerQuote->addAvengerQuotes($avengerQuote1);
     $listAvengerQuote->addAvengerQuotes($avengerQuote2);
-    $listAvengerQuote->toXML("file.xml");
+    $listAvengerQuote->toXML("temp.xml");
 
     echo '<table><tr><td><pre><b><span>To XML</span><br><br></b>';
     print_r($listAvengerQuote); 
     echo '</pre></td><td><pre><b><span>From XML</span><br><br></b>';
-    print_r($listAvengerQuote->fromXML("file.xml"));
+    print_r($listAvengerQuote->fromXML("temp.xml"));
     echo '</pre></td></tr></table>';
 ?>
 </body>
