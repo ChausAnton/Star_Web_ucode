@@ -1,3 +1,6 @@
-create database ucode_web;
-create user 'anchaus'@'localhost' identified by 'securepass';
-grant all privileges on ucode_web . * to anchaus@localhost;
+USE ucode_web;
+
+SELECT total.hero_id, total.points from (
+    SELECT powers.hero_id, SUM(powers.points) AS points
+    FROM powers GROUP BY powers.hero_id
+) as total ORDER BY total.points DESC LIMIT 1;
