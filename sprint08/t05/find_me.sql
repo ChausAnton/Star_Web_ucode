@@ -1,3 +1,7 @@
-create database ucode_web;
-create user 'anchaus'@'localhost' identified by 'securepass';
-grant all privileges on ucode_web . * to anchaus@localhost;
+USE ucode_web;
+
+SELECT heroes.id, heroes.name FROM (
+    SELECT
+)
+
+/*SELECT hero_id, COUNT(*) FROM teams GROUP BY hero_id HAVING COUNT(*) > 1
