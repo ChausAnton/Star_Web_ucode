@@ -26,98 +26,26 @@ CREATE TABLE IF NOT EXISTS teams (
     FOREIGN KEY(hero_id) REFERENCES heroes(id) ON DELETE CASCADE
 );
 
-INSERT INTO powers (hero_id, name, points, type) values (
-    1,
-    'bloody fist',
-    110,
-    'attack'
-);
+INSERT INTO powers (hero_id, name, points, type) values ( 1, 'bloody fist', 110, 'attack');
+INSERT INTO powers (hero_id, name, points, type) values ( 2, 'iron shield', 200, 'defense');
+INSERT INTO powers (hero_id, name, points, type) values ( 3, 'iron shield', 100, 'defense');
+INSERT INTO powers (hero_id, name, points, type) values ( 4, 'bloody fist', 140, 'attack');
+INSERT INTO powers (hero_id, name, points, type) values ( 6, 'iron shield', 90, 'defense');
+INSERT INTO powers (hero_id, name, points, type) values ( 8, 'bloody fist', 240, 'attack');
 
-INSERT INTO powers (hero_id, name, points, type) values (
-    2,
-    'iron shield',
-    200,
-    'defense'
-);
+INSERT INTO race (hero_id, name) values (1, 'Human' );
+INSERT INTO race (hero_id, name) values ( 2, 'Kree' );
+INSERT INTO race (hero_id, name) values ( 10, 'Kree' );
 
-INSERT INTO race (hero_id, name) values (
-    2,
-    'Human'
-);
-
-INSERT INTO teams (hero_id, name) values (
-    2,
-    'Avengers'
-);
-
-INSERT INTO powers (hero_id, name, points, type) values (
-    6,
-    'iron shield',
-    700,
-    'defense'
-);
-
-INSERT INTO race (hero_id, name) values (
-    6,
-    'Human'
-);
-
-INSERT INTO teams (hero_id, name) values (
-    6,
-    'Avengers'
-);
-
-INSERT INTO powers (hero_id, name, points, type) values (
-    4,
-    'iron shield',
-    400,
-    'defense'
-);
-
-INSERT INTO race (hero_id, name) values (
-    4,
-    'Human'
-);
-
-INSERT INTO teams (hero_id, name) values (
-    4,
-    'Avengers'
-);
-
-INSERT INTO powers (hero_id, name, points, type) values (
-    5,
-    'shield',
-    500,
-    'defense'
-);
-
-INSERT INTO race (hero_id, name) values (
-    5,
-    'Human'
-);
-
-INSERT INTO race (hero_id, name) values (
-    3,
-    'Human'
-);
-
-INSERT INTO race (hero_id, name) values (
-    4,
-    'Kree'
-);
-
-INSERT INTO teams (hero_id, name) values (
-    5,
-    'Avengers'
-);
-
-INSERT INTO teams (hero_id, name) values (
-    5,
-    'Hydra'
-);
-
-INSERT INTO teams (hero_id, name) values (
-    7,
-    'Hydra'
-);
-
+INSERT INTO teams (hero_id, name) values ( 1, 'Avengers');
+INSERT INTO teams (hero_id, name) values ( 2, 'Avengers');
+INSERT INTO teams (hero_id, name) values ( 3, 'Avengers');
+INSERT INTO teams (hero_id, name) values ( 4, 'Avengers');
+INSERT INTO teams (hero_id, name) values ( 5, 'Avengers');
+INSERT INTO teams (hero_id, name) values ( 5, 'Hydra');
+INSERT INTO teams (hero_id, name) values ( 6, 'Hydra');
+INSERT INTO teams (hero_id, name) values ( 7, 'Hydra' );
+INSERT INTO teams (hero_id, name) values ( 8, 'Hydra' );
+INSERT INTO teams (hero_id, name) values ( 9, 'Hydra' );
+INSERT INTO teams (hero_id, name) values ( 10, 'Avengers');
+INSERT INTO teams (hero_id, name) values ( 10, 'Hydra');

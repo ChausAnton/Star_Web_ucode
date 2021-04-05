@@ -51,7 +51,7 @@ INSERT INTO heroes (name, description, class_role) values (
 );
 
 INSERT INTO heroes (name, description, class_role) values (
-    'Koji',
+    'Kojia',
     'One man and the blade of his ancestors against a corrupted empire. You know, basic samurai stuff.',
     'healer'
 );
@@ -59,5 +59,5 @@ INSERT INTO heroes (name, description, class_role) values (
 INSERT INTO heroes (name, description, class_role) values (
     'Hattori',
     'Fabled demon bride. Vengence burning in her veins. It\'s too late to run.',
-    'dps'
+    'healer'
 );
