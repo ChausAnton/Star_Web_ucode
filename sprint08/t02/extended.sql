@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS powers (
     points INT not NULL,
     type ENUM('attack', 'defense'),
 
-    FOREIGN KEY(hero_id) REFERENCES heroes(id)
+    FOREIGN KEY(hero_id) REFERENCES heroes(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS race (
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS race (
     hero_id INT not NULL,
     name VARCHAR(30),
 
-    FOREIGN KEY(hero_id) REFERENCES heroes(id)
+    FOREIGN KEY(hero_id) REFERENCES heroes(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS teams (
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS teams (
     hero_id INT not NULL,
     name VARCHAR(30),
 
-    FOREIGN KEY(hero_id) REFERENCES heroes(id)
+    FOREIGN KEY(hero_id) REFERENCES heroes(id) ON DELETE CASCADE
 );
 
 INSERT INTO powers (hero_id, name, points, type) values (
