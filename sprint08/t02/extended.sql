@@ -35,8 +35,8 @@ INSERT INTO powers (hero_id, name, points, type) values (
 
 INSERT INTO powers (hero_id, name, points, type) values (
     2,
-    'efense',
-    110,
+    'iron shield',
+    200,
     'defense'
 );
 
@@ -57,6 +57,16 @@ INSERT INTO teams (hero_id, name) values (
 
 INSERT INTO teams (hero_id, name) values (
     5,
+    'Hydra'
+);
+
+INSERT INTO teams (hero_id, name) values (
+    6,
+    'Avengers'
+);
+
+INSERT INTO teams (hero_id, name) values (
+    7,
     'Hydra'
 );
 
