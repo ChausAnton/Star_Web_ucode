@@ -47,7 +47,53 @@ INSERT INTO race (hero_id, name) values (
 
 INSERT INTO teams (hero_id, name) values (
     2,
-    'Hydra'
+    'Avengers'
+);
+
+INSERT INTO powers (hero_id, name, points, type) values (
+    6,
+    'iron shield',
+    700,
+    'defense'
+);
+
+INSERT INTO race (hero_id, name) values (
+    6,
+    'Human'
+);
+
+INSERT INTO teams (hero_id, name) values (
+    6,
+    'Avengers'
+);
+
+INSERT INTO powers (hero_id, name, points, type) values (
+    4,
+    'iron shield',
+    400,
+    'defense'
+);
+
+INSERT INTO race (hero_id, name) values (
+    4,
+    'Human'
+);
+
+INSERT INTO teams (hero_id, name) values (
+    4,
+    'Avengers'
+);
+
+INSERT INTO powers (hero_id, name, points, type) values (
+    5,
+    'shield',
+    500,
+    'defense'
+);
+
+INSERT INTO race (hero_id, name) values (
+    5,
+    'Human'
 );
 
 INSERT INTO race (hero_id, name) values (
@@ -68,11 +114,6 @@ INSERT INTO teams (hero_id, name) values (
 INSERT INTO teams (hero_id, name) values (
     5,
     'Hydra'
-);
-
-INSERT INTO teams (hero_id, name) values (
-    6,
-    'Avengers'
 );
 
 INSERT INTO teams (hero_id, name) values (
