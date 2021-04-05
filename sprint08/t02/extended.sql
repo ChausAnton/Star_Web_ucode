@@ -41,6 +41,16 @@ INSERT INTO powers (hero_id, name, points, type) values (
 );
 
 INSERT INTO race (hero_id, name) values (
+    2,
+    'Human'
+);
+
+INSERT INTO teams (hero_id, name) values (
+    2,
+    'Hydra'
+);
+
+INSERT INTO race (hero_id, name) values (
     3,
     'Human'
 );
