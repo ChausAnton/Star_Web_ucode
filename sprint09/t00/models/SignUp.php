@@ -1,7 +1,7 @@
 <?php
     include "Model.php";
 
-    class TableBase extends Model{
+    class SignUp extends Model{
         public $id = NULL;
         public function __construct($tabel_name, $login, $password, $password2, $full_name, $email) {
             parent::__construct($tabel_name);
@@ -29,7 +29,7 @@
             if ($this->dbNewC->getConnectionStatus() && $this->checkdata()) {
                 $newTable = $this->dbNewC->dbConnent->query("SELECT id, login FROM " . $this->table . " WHERE login = '" . $this->login . "';");
                 $array = $newTable->fetch(PDO::FETCH_ASSOC);
-                $sqlReq = "INSERT INTO `$this->table` (login, password, full_name, email_address) VALUES (:login, :password, :full_name, :email)";
+                $sqlReq = "INSERT INTO `$this->table` (login, admin, password, full_name, email_address) VALUES (:login, false, :password, :full_name, :email)";
                 $stmt = $this->dbNewC->dbConnent->prepare($sqlReq);
                 $stmt->bindParam(":login", $this->login);
                 $stmt->bindParam(":password", $this->password);
