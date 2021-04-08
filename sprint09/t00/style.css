@@ -1,5 +1,35 @@
+body {
+    background: #303133;
+}
+
 .box_form {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-flow: row wrap;
-    
+    justify-content: center;
+}
+
+.body_signUP {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    top: 25%;
+    padding: 10px;
+    border-radius: 15px;
+    background: #262729;
+}
+
+input {
+    margin: 10px;
+    background: #E7F0FE;
+    border-radius: 5px;
+}
+
+.success {
+    color: 	#6cc070;
+}
+
+.fail {
+    color: 	#ff6633;
 }

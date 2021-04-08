@@ -13,17 +13,24 @@
 </head>
 <body>
     <form action="" method="POST" class="box_form">
-        <input required placeholder="Login" name="login" maxlength="30">
-        <input required placeholder="Password" name="password" maxlength="30">
-        <input required placeholder="Confirm password" name="password2" maxlength="30">
-        <input required placeholder="Full name" name="full_name" maxlength="30">
-        <input required placeholder="Email" name="email" maxlength="30">
-        <input type="submit" value="Sign up" name="sign_up">
+        <div class="body_signUP">
+            <input placeholder="Login" name="login">
+            <input type="password" placeholder="Password" name="password">
+            <input type="password" placeholder="Confirm password" name="password2">
+            <input placeholder="Full name" name="full_name">
+            <input placeholder="Email" name="email">
+            <input type="submit" value="Sign up" name="sign_up">
+        </div>
     </from>
     <?php
         if(isset($_POST['sign_up'])) {
             $conn = new TableBase("sword", $_POST['login'], $_POST['password'], $_POST['password2'], $_POST['full_name'], $_POST['email']);
-            $conn->save();
+            if($conn->save()) {
+                echo '<span class="success">Sign up success</span>';
+            }
+            else {
+                echo '<span class="fail">Sign up fail</span>';
+            }
         }
     ?>
 </body>

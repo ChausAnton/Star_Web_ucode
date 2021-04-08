@@ -36,7 +36,9 @@
                 $stmt->bindParam(":full_name", $this->full_name);
                 $stmt->bindParam(":email", $this->email);
                 $stmt->execute();
+                return true;
             }
+            return false;
         }
     }
 
