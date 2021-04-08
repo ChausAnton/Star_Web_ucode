@@ -1,0 +1,5 @@
+.box_form {
+    display: flex;
+    flex-flow: row wrap;
+    
+}

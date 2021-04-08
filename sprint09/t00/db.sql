@@ -1,0 +1,9 @@
+USE ucode_web;
+
+CREATE TABLE IF NOT EXISTS sword (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(30) NOT NULL,
+    full_name VARCHAR(30) NOT NULL,
+    email_address VARCHAR(30) NOT NULL UNIQUE
+);
