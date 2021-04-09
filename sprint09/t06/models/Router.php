@@ -8,10 +8,48 @@
         }
 
         function callController($action) {
-            if($action == "SignUp") {
+
+            if($action == "Sign Up") {
                 $conn = new SignUp("users", $_POST['login'], $_POST['password'], $_POST['password2'], $_POST['full_name'], $_POST['email']);
                 if($conn->save()) {
+                    echo '<span class="success">Sign up success</span>';   
                 }
+                else {
+                    echo '<span class="fail">Sign up fail</span>';
+                }
+            }
+
+            if($action == "Sign In") {
+                $conn = new SignIn("users", $_POST['login'], $_POST['password']);
+                if($conn->SignInFunc()) {
+                    $show = NULL;
+                    if($conn->getAdmin()) {
+                        $show = New View("view/templates/admin.html");
+                    }
+                    else {
+                        $show = New View("view/templates/notAdmin.html");
+                    }
+                    $show->render();
+                }
+                else {
+                    echo '<span class="fail">Sign in fail</span><br>';
+                }
+            }
+
+            if($action == "Remind me password") {
+                
+                $passRemind = New PasswordReminder("users", $_POST['login']);
+                if($passRemind->getPassword()) {
+                    echo '<span class="success">Password successfully sent</span>';
+                }
+                else {
+                    echo '<span class="fail">Ohh, something went wrong, retry later</span>';
+                }
+            }
+
+            if($action == "Sign out") {
+                $show = New View("view/templates/signIn.html");
+                $show->render();
             }
 
             if($action == "signInPage") {
@@ -23,6 +61,12 @@
                 $show = New View("view/templates/signUp.html");
                 $show->render();
             }
+
+            if($action == "reminderPage") {
+                $show = New View("view/templates/passwordReminder.html");
+                $show->render();
+            }
+
         }        
 
         function printParameters() {
