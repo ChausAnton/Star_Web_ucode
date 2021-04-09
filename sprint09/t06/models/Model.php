@@ -1,5 +1,4 @@
 <?php
-    include 'connection/DatabaseConnection.php';
     abstract class Model {
         public function __construct($table) {
             $this->setTabel($table);

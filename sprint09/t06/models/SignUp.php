@@ -1,6 +1,4 @@
 <?php
-    include "Model.php";
-
     class SignUp extends Model{
         public $id = NULL;
         public function __construct($tabel_name, $login, $password, $password2, $full_name, $email) {

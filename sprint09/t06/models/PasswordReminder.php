@@ -1,6 +1,5 @@
 <?php
     include "Model.php";
-
     class PasswordReminder extends Model {
         public $id = NULL;
         public function __construct($tabel_name, $login) {

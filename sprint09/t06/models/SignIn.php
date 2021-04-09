@@ -1,5 +1,4 @@
 <?php
-    include "Model.php";
 
     class SignIn extends Model {
         public $id = NULL;
