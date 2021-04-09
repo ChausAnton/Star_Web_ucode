@@ -5,6 +5,7 @@
         }
 
         function render() {
+            ob_clean();
             echo $this->content;
         }
     }

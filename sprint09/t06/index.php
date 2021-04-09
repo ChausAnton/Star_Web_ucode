@@ -18,7 +18,11 @@
 
     if(isset($_GET['moveto'])) {
         $router = new Router();
-        $router->callController();
+        $router->callController($_GET['moveto']);
+    }
+    else if(isset($_POST['moveto'])) {
+        $router = new Router();
+        $router->callController($_POST['moveto']);
     }
 
 ?>
