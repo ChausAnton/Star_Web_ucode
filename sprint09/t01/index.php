@@ -59,7 +59,7 @@
     </div>
     <?php
         if(isset($_POST['sign_in'])) {
-            $conn = new SignIn("sword", $_POST['login'], $_POST['password']);
+            $conn = new SignIn("users", $_POST['login'], $_POST['password']);
             if($conn->SignInFunc()) {
                 $_SESSION['Sign_in'] = "true";
                 $_SESSION['admin'] = $conn->getAdmin();

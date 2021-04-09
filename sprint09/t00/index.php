@@ -24,7 +24,7 @@
     </from>
     <?php
         if(isset($_POST['sign_up'])) {
-            $conn = new SignUp("sword", $_POST['login'], $_POST['password'], $_POST['password2'], $_POST['full_name'], $_POST['email']);
+            $conn = new SignUp("users", $_POST['login'], $_POST['password'], $_POST['password2'], $_POST['full_name'], $_POST['email']);
             if($conn->save()) {
                 echo '<span class="success">Sign up success</span>';
             }

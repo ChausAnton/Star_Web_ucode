@@ -10,7 +10,7 @@
         }
 
         function setConnection() {
-            $this->dbNewC = new DatabaseConnection('127.0.0.1', null, "anchaus", "securepass", "ucode_web");
+            $this->dbNewC = new DatabaseConnection('127.0.0.1', null, "anchaus", "securepass", "sword");
         }
     }
 ?>
