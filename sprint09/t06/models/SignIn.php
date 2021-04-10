@@ -12,6 +12,9 @@
             $newTable = $this->dbNewC->dbConnent->query("SELECT password, admin FROM " . $this->table . " WHERE login = '" . $this->login . "' and password = '" . $this->password . "';");
             $array = $newTable->fetch(PDO::FETCH_ASSOC);
             if($array) {
+                $_SESSION['admin'] = $array['admin'];
+                $_SESSION['password'] = $array['password'];
+                $_SESSION['login'] = $this->login;
                 return true;
             }
             return false;

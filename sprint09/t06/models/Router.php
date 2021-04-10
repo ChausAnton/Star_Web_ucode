@@ -33,6 +33,19 @@
 
         function callController($action) {
 
+            if(isset($_SESSION['admin']) && isset($_SESSION['password']) && isset($_SESSION['login']) &&
+                $action != "Sign out") {
+                $show = NULL;
+                    if($_SESSION['admin'] == 1) {
+                        $show = New View("view/templates/admin.html");
+                    }
+                    else {
+                        $show = New View("view/templates/notAdmin.html");
+                    }
+                    $show->render();
+                return;
+            }
+
             if($action == "Sign In") {
                 $conn = new SignIn("users", $_POST['login'], $_POST['password']);
                 if($conn->SignInFunc()) {
@@ -51,6 +64,9 @@
             }
 
             if($action == "Sign out") {
+                $_SESSION['admin'] = NULL;
+                $_SESSION['password'] = NULL;
+                $_SESSION['login'] = NULL;
                 $show = New View("view/templates/signIn.html");
                 $show->render();
             }
