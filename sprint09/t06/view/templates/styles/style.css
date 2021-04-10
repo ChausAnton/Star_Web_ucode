@@ -53,7 +53,7 @@ input {
     color: 	#ff6633;
 }
 
-.body_signUP, .body_signOUT {
+.body_signUP, .body_signOUT, .body_signIN {
     position: absolute;
     display: flex;
     flex-flow: column;
